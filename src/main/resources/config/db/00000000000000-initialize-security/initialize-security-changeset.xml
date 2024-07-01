@@ -77,14 +77,14 @@
                               columnDataType="varchar(60)"
                               tableName="kvmix_user"/>
         <loadData
-                file="config/liquibase/data/authority.csv"
+                file="config/db/00000000000000-initialize-security/authority.csv"
                 separator=";"
                 tableName="kvmix_authority"
                 usePreparedStatements="true">
             <column name="name" type="string"/>
         </loadData>
         <loadData
-                file="config/liquibase/data/user.csv"
+                file="config/db/00000000000000-initialize-security/user.csv"
                 separator=";"
                 tableName="kvmix_user"
                 usePreparedStatements="true">
@@ -93,7 +93,7 @@
             <column name="created_date" type="timestamp"/>
         </loadData>
         <loadData
-                file="config/liquibase/data/user_authority.csv"
+                file="config/db/00000000000000-initialize-security/user_authority.csv"
                 separator=";"
                 tableName="kvmix_user_authority"
                 usePreparedStatements="true">

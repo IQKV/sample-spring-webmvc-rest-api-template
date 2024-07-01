@@ -124,7 +124,7 @@ spring :
         physical-strategy : org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
         implicit-strategy : org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
   liquibase :
-    change-log : config/liquibase/master.xml
+    change-log : config/db/changelog.xml
   messages :
     basename : i18n/messages
   main :

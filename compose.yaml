@@ -1,3 +1,4 @@
+# This configuration is intended for development purpose
 services :
   postgresql :
     image : postgres:16.3
@@ -6,8 +7,8 @@ services :
     # volumes:
     #   - ~/volumes/kvmix-dashboard /postgresql/:/var/lib/postgresql/data/
     environment :
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=changeme
       - POSTGRES_DB=mydatabase
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck :
@@ -25,5 +26,5 @@ services :
     container_name : kvmix-mailhog
     restart : unless-stopped
     ports :
-      - "1025:1025"
+      - "25:1025"
       - "8025:8025"
