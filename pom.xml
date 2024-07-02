@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.1</version>
-        <relativePath></relativePath>
+        <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kvmix</groupId>
@@ -707,6 +707,7 @@
                         <exclude>**/MailService.class</exclude>
                         <exclude>**/Undertow*.class</exclude>
                         <exclude>**/domain/Authority.class</exclude>
+                        <exclude>**/ActiveProfilesInfoContributor.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
