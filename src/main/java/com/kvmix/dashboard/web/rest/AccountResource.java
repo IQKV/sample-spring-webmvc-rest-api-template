@@ -10,11 +10,11 @@ import com.kvmix.dashboard.service.MailService;
 import com.kvmix.dashboard.service.UserService;
 import com.kvmix.dashboard.service.dto.AdminUserDTO;
 import com.kvmix.dashboard.service.dto.PasswordChangeDTO;
-import com.kvmix.dashboard.web.rest.errors.EmailAlreadyUsedException;
-import com.kvmix.dashboard.web.rest.errors.InvalidPasswordException;
 import com.kvmix.dashboard.web.rest.vm.KeyAndPasswordVM;
 import com.kvmix.dashboard.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.StringUtils;
+import org.iqkv.boot.web.rest.errors.EmailAlreadyUsedException;
+import org.iqkv.boot.web.rest.errors.InvalidPasswordException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -60,7 +60,7 @@ public class AccountResource {
    * @param managedUserVM the managed user View Model.
    * @throws InvalidPasswordException  {@code 400 (Bad Request)} if the password is incorrect.
    * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-   * @throws com.kvmix.dashboard.web.rest.errors.LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is already used.
+   * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is already used.
    */
   @PostMapping("/register")
   @ResponseStatus(HttpStatus.CREATED)

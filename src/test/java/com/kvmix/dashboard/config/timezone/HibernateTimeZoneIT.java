@@ -13,6 +13,7 @@ import java.time.OffsetTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.TimeZone;
 
 import com.kvmix.dashboard.IntegrationTest;
 import com.kvmix.dashboard.repository.timezone.DateTimeWrapper;
@@ -50,6 +51,7 @@ class HibernateTimeZoneIT {
 
   @BeforeEach
   public void setup() {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
     dateTimeWrapper = new DateTimeWrapper();
     dateTimeWrapper.setInstant(Instant.parse("2014-11-12T05:10:00.0Z"));
     dateTimeWrapper.setLocalDateTime(LocalDateTime.parse("2014-11-12T07:20:00.0"));

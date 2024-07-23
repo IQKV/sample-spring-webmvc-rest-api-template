@@ -8,9 +8,9 @@ import java.util.Optional;
 
 import com.kvmix.dashboard.domain.Authority;
 import com.kvmix.dashboard.repository.AuthorityRepository;
-import com.kvmix.dashboard.web.rest.errors.BadRequestAlertException;
-import com.kvmix.dashboard.web.util.HeaderUtil;
-import com.kvmix.dashboard.web.util.ResponseUtil;
+import org.iqkv.boot.web.rest.HeaderUtil;
+import org.iqkv.boot.web.rest.ResponseUtil;
+import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

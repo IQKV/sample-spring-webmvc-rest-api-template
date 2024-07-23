@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.kvmix.dashboard.service.UserService;
 import com.kvmix.dashboard.service.dto.UserDTO;
-import com.kvmix.dashboard.web.util.PaginationUtil;
+import org.iqkv.boot.web.rest.PaginationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

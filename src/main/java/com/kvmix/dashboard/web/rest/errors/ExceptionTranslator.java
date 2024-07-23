@@ -11,9 +11,15 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.kvmix.dashboard.config.Constants;
-import com.kvmix.dashboard.web.rest.errors.ProblemDetailWithCause.ProblemDetailWithCauseBuilder;
-import com.kvmix.dashboard.web.util.HeaderUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.iqkv.boot.web.rest.HeaderUtil;
+import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
+import org.iqkv.boot.web.rest.errors.EmailAlreadyUsedException;
+import org.iqkv.boot.web.rest.errors.ErrorConstants;
+import org.iqkv.boot.web.rest.errors.FieldErrorVM;
+import org.iqkv.boot.web.rest.errors.InvalidPasswordException;
+import org.iqkv.boot.web.rest.errors.LoginAlreadyUsedException;
+import org.iqkv.boot.web.rest.errors.ProblemDetailWithCause;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
@@ -102,7 +108,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
     ) {
       return problemDetailWithCause;
     }
-    return ProblemDetailWithCauseBuilder.instance().withStatus(toStatus(ex).value()).build();
+    return ProblemDetailWithCause.ProblemDetailWithCauseBuilder.instance().withStatus(toStatus(ex).value()).build();
   }
 
   protected ProblemDetailWithCause customizeProblem(ProblemDetailWithCause problem, Throwable err, NativeWebRequest request) {
