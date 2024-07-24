@@ -16,6 +16,7 @@ import com.kvmix.dashboard.security.AuthoritiesConstants;
 import com.kvmix.dashboard.service.MailService;
 import com.kvmix.dashboard.service.UserService;
 import com.kvmix.dashboard.service.dto.AdminUserDTO;
+import org.iqkv.boot.build.ClientApplicationProperties;
 import org.iqkv.boot.web.rest.HeaderUtil;
 import org.iqkv.boot.web.rest.PaginationUtil;
 import org.iqkv.boot.web.rest.ResponseUtil;
@@ -24,7 +25,6 @@ import org.iqkv.boot.web.rest.errors.EmailAlreadyUsedException;
 import org.iqkv.boot.web.rest.errors.LoginAlreadyUsedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -88,8 +88,7 @@ public class UserResource {
 
   private final Logger log = LoggerFactory.getLogger(UserResource.class);
 
-  @Value("${kvmix.clientApp.name}")
-  private String applicationName;
+  private final ClientApplicationProperties clientApplicationProperties;
 
   private final UserService userService;
 
@@ -97,7 +96,8 @@ public class UserResource {
 
   private final MailService mailService;
 
-  public UserResource(UserService userService, UserRepository userRepository, MailService mailService) {
+  public UserResource(ClientApplicationProperties clientApplicationProperties, UserService userService, UserRepository userRepository, MailService mailService) {
+    this.clientApplicationProperties = clientApplicationProperties;
     this.userService = userService;
     this.userRepository = userRepository;
     this.mailService = mailService;
@@ -131,7 +131,7 @@ public class UserResource {
       User newUser = userService.createUser(userDTO);
       mailService.sendCreationEmail(newUser);
       return ResponseEntity.created(new URI("/api/admin/users/" + newUser.getLogin()))
-          .headers(HeaderUtil.createAlert(applicationName, "userManagement.created", newUser.getLogin()))
+          .headers(HeaderUtil.createAlert(clientApplicationProperties.getName(), "userManagement.created", newUser.getLogin()))
           .body(newUser);
     }
   }
@@ -163,7 +163,7 @@ public class UserResource {
 
     return ResponseUtil.wrapOrNotFound(
         updatedUser,
-        HeaderUtil.createAlert(applicationName, "userManagement.updated", userDTO.getLogin())
+        HeaderUtil.createAlert(clientApplicationProperties.getName(), "userManagement.updated", userDTO.getLogin())
     );
   }
 
@@ -214,6 +214,6 @@ public class UserResource {
   public ResponseEntity<Void> deleteUser(@PathVariable("login") @Pattern(regexp = Constants.LOGIN_REGEX) String login) {
     log.debug("REST request to delete User: {}", login);
     userService.deleteUser(login);
-    return ResponseEntity.noContent().headers(HeaderUtil.createAlert(applicationName, "userManagement.deleted", login)).build();
+    return ResponseEntity.noContent().headers(HeaderUtil.createAlert(clientApplicationProperties.getName(), "userManagement.deleted", login)).build();
   }
 }

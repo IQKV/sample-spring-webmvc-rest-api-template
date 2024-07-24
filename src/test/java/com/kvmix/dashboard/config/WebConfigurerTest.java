@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import org.iqkv.boot.security.SecurityProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
@@ -37,7 +38,7 @@ class WebConfigurerTest {
 
   private MockEnvironment env;
 
-  private ApplicationProperties props;
+  private SecurityProperties props;
 
   @BeforeEach
   public void setup() {
@@ -46,7 +47,7 @@ class WebConfigurerTest {
     doReturn(mock(ServletRegistration.Dynamic.class)).when(servletContext).addServlet(anyString(), any(Servlet.class));
 
     env = new MockEnvironment();
-    props = new ApplicationProperties();
+    props = new SecurityProperties();
 
     webConfigurer = new WebConfigurer(env, props);
   }

@@ -2,6 +2,7 @@ package com.kvmix.dashboard.config;
 
 import jakarta.servlet.ServletContext;
 
+import org.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
@@ -23,11 +24,11 @@ public class WebConfigurer implements ServletContextInitializer {
 
   private final Environment env;
 
-  private final ApplicationProperties applicationProperties;
+  private final SecurityProperties securityProperties;
 
-  public WebConfigurer(Environment env, ApplicationProperties applicationProperties) {
+  public WebConfigurer(Environment env, SecurityProperties securityProperties) {
     this.env = env;
-    this.applicationProperties = applicationProperties;
+    this.securityProperties = securityProperties;
   }
 
   @Override
@@ -42,7 +43,7 @@ public class WebConfigurer implements ServletContextInitializer {
   @Bean
   public CorsFilter corsFilter() {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-    CorsConfiguration config = applicationProperties.getCors();
+    CorsConfiguration config = securityProperties.getCors();
     if (!CollectionUtils.isEmpty(config.getAllowedOrigins()) || !CollectionUtils.isEmpty(config.getAllowedOriginPatterns())) {
       log.debug("Registering CORS filter");
       source.registerCorsConfiguration("/api/**", config);

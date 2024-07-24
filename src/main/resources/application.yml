@@ -170,18 +170,33 @@ springdoc :
 # Add your own application properties here, see the ApplicationProperties class
 # to have type-safe configuration, like in the ApplicationProperties above
 # ===================================================================
-kvmix :
-  clientApp :
+iqkv :
+  build :
+    description : '@project.description@'
+    relative-path : ${SERVER_SERVLET_CONTEXT_PATH:/}
+    version : '@project.version@'
+  client-application :
     name : 'dashboardApp'
-  # By default, CORS is disabled. Uncomment to enable.
-  # cors:
-  #   allowed-origins: "http://localhost:8100,http://localhost:9000"
-  #   allowed-methods: "*"
-  #   allowed-headers: "*"
-  #   exposed-headers: "Authorization,Link,X-Total-Count,X-${kvmix.clientApp.name}-alert,X-${kvmix.clientApp.name}-error,X-${kvmix.clientApp.name}-params"
-  #   allow-credentials: true
-  #   max-age: 1800
+
   mail :
     from : Dashboard@localhost
   security :
+    # By default, CORS is disabled. Uncomment to enable.
+    # cors:
+    #   allowed-origins: "http://localhost:8100,http://localhost:9000"
+    #   allowed-methods: "*"
+    #   allowed-headers: "*"
+    #   exposed-headers: "Authorization,Link,X-Total-Count,X-${iqkv.client-application.name}-alert,X-${iqkv.client-application.name}-error,X-${iqkv.client-application.name}-params"
+    #   allow-credentials: true
+    #   max-age: 1800
 
+git :
+  build_time : '@git.build.time@'
+  commit : '@git.commit.id.abbrev@'
+info :
+  app :
+    build_time : ${git.build_time}
+    description : '@project.description@'
+    git_commit : ${git.commit}
+    name : '@project.name@'
+    version : '@project.version@'

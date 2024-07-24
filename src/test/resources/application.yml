@@ -55,8 +55,8 @@ server :
 # Add your own application properties here, see the ApplicationProperties class
 # to have type-safe configuration, like in the ApplicationProperties above
 # ===================================================================
-kvmix :
-  clientApp :
+iqkv :
+  client-application :
     name : 'dashboardApp'
   mail :
     from : Dashboard@localhost.com

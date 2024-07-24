@@ -8,12 +8,12 @@ import java.util.Optional;
 
 import com.kvmix.dashboard.domain.Authority;
 import com.kvmix.dashboard.repository.AuthorityRepository;
+import org.iqkv.boot.build.ClientApplicationProperties;
 import org.iqkv.boot.web.rest.HeaderUtil;
 import org.iqkv.boot.web.rest.ResponseUtil;
 import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,12 +37,11 @@ public class AuthorityResource {
 
   private static final String ENTITY_NAME = "adminAuthority";
 
-  @Value("${kvmix.clientApp.name}")
-  private String applicationName;
-
+  private final ClientApplicationProperties clientApplicationProperties;
   private final AuthorityRepository authorityRepository;
 
-  public AuthorityResource(AuthorityRepository authorityRepository) {
+  public AuthorityResource(ClientApplicationProperties clientApplicationProperties, AuthorityRepository authorityRepository) {
+    this.clientApplicationProperties = clientApplicationProperties;
     this.authorityRepository = authorityRepository;
   }
 
@@ -62,7 +61,7 @@ public class AuthorityResource {
     }
     authority = authorityRepository.save(authority);
     return ResponseEntity.created(new URI("/api/authorities/" + authority.getName()))
-        .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, authority.getName()))
+        .headers(HeaderUtil.createEntityCreationAlert(clientApplicationProperties.getName(), true, ENTITY_NAME, authority.getName()))
         .body(authority);
   }
 
@@ -103,6 +102,6 @@ public class AuthorityResource {
   public ResponseEntity<Void> deleteAuthority(@PathVariable("id") String id) {
     log.debug("REST request to delete Authority : {}", id);
     authorityRepository.deleteById(id);
-    return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id)).build();
+    return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(clientApplicationProperties.getName(), true, ENTITY_NAME, id)).build();
   }
 }

@@ -8,9 +8,9 @@ import javax.crypto.spec.SecretKeySpec;
 import com.kvmix.dashboard.management.SecurityMetersService;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import com.nimbusds.jose.util.Base64;
+import org.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
@@ -23,8 +23,11 @@ public class SecurityJwtConfiguration {
 
   private final Logger log = LoggerFactory.getLogger(SecurityJwtConfiguration.class);
 
-  @Value("${kvmix.security.authentication.jwt.base64-secret}")
-  private String jwtKey;
+  private final SecurityProperties securityProperties;
+
+  public SecurityJwtConfiguration(SecurityProperties securityProperties) {
+    this.securityProperties = securityProperties;
+  }
 
   @Bean
   public JwtDecoder jwtDecoder(SecurityMetersService metersService) {
@@ -57,7 +60,7 @@ public class SecurityJwtConfiguration {
   }
 
   private SecretKey getSecretKey() {
-    byte[] keyBytes = Base64.from(jwtKey).decode();
+    byte[] keyBytes = Base64.from(securityProperties.getAuthentication().getJwt().getBase64Secret()).decode();
     return new SecretKeySpec(keyBytes, 0, keyBytes.length, JWT_ALGORITHM.getName());
   }
 }

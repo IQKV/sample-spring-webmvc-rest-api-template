@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import com.kvmix.dashboard.config.Constants;
 import org.apache.commons.lang3.StringUtils;
+import org.iqkv.boot.build.ClientApplicationProperties;
 import org.iqkv.boot.web.rest.HeaderUtil;
 import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
 import org.iqkv.boot.web.rest.errors.EmailAlreadyUsedException;
@@ -20,7 +21,6 @@ import org.iqkv.boot.web.rest.errors.FieldErrorVM;
 import org.iqkv.boot.web.rest.errors.InvalidPasswordException;
 import org.iqkv.boot.web.rest.errors.LoginAlreadyUsedException;
 import org.iqkv.boot.web.rest.errors.ProblemDetailWithCause;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.dao.DataAccessException;
@@ -54,12 +54,11 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
   private static final String PATH_KEY = "path";
   private static final boolean CASUAL_CHAIN_ENABLED = false;
 
-  @Value("${kvmix.clientApp.name}")
-  private String applicationName;
-
+  private final ClientApplicationProperties clientApplicationProperties;
   private final Environment env;
 
-  public ExceptionTranslator(Environment env) {
+  public ExceptionTranslator(ClientApplicationProperties clientApplicationProperties, Environment env) {
+    this.clientApplicationProperties = clientApplicationProperties;
     this.env = env;
   }
 
@@ -266,7 +265,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
   private HttpHeaders buildHeaders(Throwable err) {
     return err instanceof BadRequestAlertException badRequestAlertException
         ? HeaderUtil.createFailureAlert(
-        applicationName,
+        clientApplicationProperties.getName(),
         true,
         badRequestAlertException.getEntityName(),
         badRequestAlertException.getErrorKey(),

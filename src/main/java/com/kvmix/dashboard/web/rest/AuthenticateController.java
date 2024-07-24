@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kvmix.dashboard.web.rest.vm.LoginVM;
+import org.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,17 +41,12 @@ public class AuthenticateController {
 
   private final Logger log = LoggerFactory.getLogger(AuthenticateController.class);
 
+  private final SecurityProperties securityProperties;
   private final JwtEncoder jwtEncoder;
-
-  @Value("${kvmix.security.authentication.jwt.token-validity-in-seconds:0}")
-  private long tokenValidityInSeconds;
-
-  @Value("${kvmix.security.authentication.jwt.token-validity-in-seconds-for-remember-me:0}")
-  private long tokenValidityInSecondsForRememberMe;
-
   private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
-  public AuthenticateController(JwtEncoder jwtEncoder, AuthenticationManagerBuilder authenticationManagerBuilder) {
+  public AuthenticateController(SecurityProperties securityProperties, JwtEncoder jwtEncoder, AuthenticationManagerBuilder authenticationManagerBuilder) {
+    this.securityProperties = securityProperties;
     this.jwtEncoder = jwtEncoder;
     this.authenticationManagerBuilder = authenticationManagerBuilder;
   }
@@ -89,9 +84,9 @@ public class AuthenticateController {
     Instant now = Instant.now();
     Instant validity;
     if (rememberMe) {
-      validity = now.plus(this.tokenValidityInSecondsForRememberMe, ChronoUnit.SECONDS);
+      validity = now.plus(this.securityProperties.getAuthentication().getJwt().getTokenValidityInSecondsForRememberMe(), ChronoUnit.SECONDS);
     } else {
-      validity = now.plus(this.tokenValidityInSeconds, ChronoUnit.SECONDS);
+      validity = now.plus(this.securityProperties.getAuthentication().getJwt().getTokenValidityInSeconds(), ChronoUnit.SECONDS);
     }
 
     // @formatter:off

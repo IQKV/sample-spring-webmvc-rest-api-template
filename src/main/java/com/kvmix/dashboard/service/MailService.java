@@ -7,8 +7,8 @@ import java.util.Locale;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
-import com.kvmix.dashboard.config.ApplicationProperties;
 import com.kvmix.dashboard.domain.User;
+import org.iqkv.boot.mail.MailProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
@@ -32,7 +32,7 @@ public class MailService {
 
   private static final String BASE_URL = "baseUrl";
 
-  private final ApplicationProperties applicationProperties;
+  private final MailProperties mailProperties;
 
   private final JavaMailSender javaMailSender;
 
@@ -41,12 +41,12 @@ public class MailService {
   private final SpringTemplateEngine templateEngine;
 
   public MailService(
-      ApplicationProperties applicationProperties,
+      MailProperties mailProperties,
       JavaMailSender javaMailSender,
       MessageSource messageSource,
       SpringTemplateEngine templateEngine
   ) {
-    this.applicationProperties = applicationProperties;
+    this.mailProperties = mailProperties;
     this.javaMailSender = javaMailSender;
     this.messageSource = messageSource;
     this.templateEngine = templateEngine;
@@ -72,7 +72,7 @@ public class MailService {
     try {
       MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, StandardCharsets.UTF_8.name());
       message.setTo(to);
-      message.setFrom(applicationProperties.getMail().getFrom());
+      message.setFrom(mailProperties.getFrom());
       message.setSubject(subject);
       message.setText(content, isHtml);
       javaMailSender.send(mimeMessage);
@@ -95,7 +95,7 @@ public class MailService {
     Locale locale = Locale.forLanguageTag(user.getLangKey());
     Context context = new Context(locale);
     context.setVariable(USER, user);
-    context.setVariable(BASE_URL, applicationProperties.getMail().getBaseUrl());
+    context.setVariable(BASE_URL, mailProperties.getBaseUrl());
     String content = templateEngine.process(templateName, context);
     String subject = messageSource.getMessage(titleKey, null, locale);
     this.sendEmailSync(user.getEmail(), subject, content, false, true);

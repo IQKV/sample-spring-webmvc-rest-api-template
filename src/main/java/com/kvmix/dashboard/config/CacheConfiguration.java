@@ -8,6 +8,7 @@ import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
 import org.ehcache.jsr107.Eh107Configuration;
 import org.hibernate.cache.jcache.ConfigSettings;
+import org.iqkv.boot.cache.CacheProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
@@ -26,8 +27,8 @@ public class CacheConfiguration {
   private BuildProperties buildProperties;
   private final javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration;
 
-  public CacheConfiguration(ApplicationProperties applicationProperties) {
-    ApplicationProperties.Cache.Ehcache ehcache = applicationProperties.getCache().getEhcache();
+  public CacheConfiguration(CacheProperties cacheProperties) {
+    CacheProperties.Ehcache ehcache = cacheProperties.getEhcache();
 
     jcacheConfiguration = Eh107Configuration.fromEhcacheCacheConfiguration(
         CacheConfigurationBuilder.newCacheConfigurationBuilder(
