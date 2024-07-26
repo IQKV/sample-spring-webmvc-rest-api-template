@@ -2,13 +2,13 @@ package com.kvmix.dashboard.config;
 
 import java.time.Duration;
 
-import com.kvmix.dashboard.config.cache.PrefixedKeyGenerator;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
 import org.ehcache.jsr107.Eh107Configuration;
 import org.hibernate.cache.jcache.ConfigSettings;
 import org.iqkv.boot.cache.CacheProperties;
+import org.iqkv.boot.cache.PrefixedKeyGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;

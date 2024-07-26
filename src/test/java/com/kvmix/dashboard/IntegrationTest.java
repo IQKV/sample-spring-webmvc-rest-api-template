@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 import com.kvmix.dashboard.config.AsyncSyncConfiguration;
 import com.kvmix.dashboard.config.EmbeddedSQL;
-import com.kvmix.dashboard.config.JacksonConfiguration;
+import org.iqkv.boot.web.rest.JacksonConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**

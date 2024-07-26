@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.kvmix.dashboard.config.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.iqkv.boot.build.ClientApplicationProperties;
+import org.iqkv.boot.build.Constants;
 import org.iqkv.boot.web.rest.HeaderUtil;
 import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
 import org.iqkv.boot.web.rest.errors.EmailAlreadyUsedException;
