@@ -37,14 +37,6 @@ public class ExceptionHandlingAsyncTaskExecutor implements AsyncTaskExecutor, In
     executor.execute(createWrappedRunnable(task));
   }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  @Deprecated(since = "7.8.0", forRemoval = true)
-  public void execute(Runnable task, long startTimeout) {
-    executor.execute(createWrappedRunnable(task), startTimeout);
-  }
 
   private <T> Callable<T> createCallable(Callable<T> task) {
     return () -> {
