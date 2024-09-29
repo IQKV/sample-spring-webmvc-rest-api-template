@@ -8,10 +8,10 @@ import java.util.Optional;
 
 import com.kvmix.dashboard.domain.Authority;
 import com.kvmix.dashboard.repository.AuthorityRepository;
-import org.iqkv.boot.build.ClientApplicationProperties;
-import org.iqkv.boot.web.rest.HeaderUtil;
-import org.iqkv.boot.web.rest.ResponseUtil;
-import org.iqkv.boot.web.rest.errors.BadRequestAlertException;
+import com.iqkv.boot.build.ClientApplicationProperties;
+import com.iqkv.boot.web.rest.HeaderUtil;
+import com.iqkv.boot.web.rest.ResponseUtil;
+import com.iqkv.boot.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

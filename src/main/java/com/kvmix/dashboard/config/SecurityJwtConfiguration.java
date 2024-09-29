@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 import com.kvmix.dashboard.management.SecurityMetersService;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import com.nimbusds.jose.util.Base64;
-import org.iqkv.boot.security.SecurityProperties;
+import com.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

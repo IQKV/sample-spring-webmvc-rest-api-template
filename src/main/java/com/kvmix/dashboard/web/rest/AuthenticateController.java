@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kvmix.dashboard.web.rest.vm.LoginVM;
-import org.iqkv.boot.security.SecurityProperties;
+import com.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;

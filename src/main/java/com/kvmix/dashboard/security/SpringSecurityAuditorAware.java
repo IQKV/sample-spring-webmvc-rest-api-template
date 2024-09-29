@@ -2,7 +2,7 @@ package com.kvmix.dashboard.security;
 
 import java.util.Optional;
 
-import org.iqkv.boot.build.Constants;
+import com.iqkv.boot.build.Constants;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

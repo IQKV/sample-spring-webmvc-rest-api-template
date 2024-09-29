@@ -11,7 +11,7 @@ import com.kvmix.dashboard.config.SecurityJwtConfiguration;
 import com.kvmix.dashboard.config.WebConfigurer;
 import com.kvmix.dashboard.management.SecurityMetersService;
 import com.kvmix.dashboard.web.rest.AuthenticateController;
-import org.iqkv.boot.security.SecurityProperties;
+import com.iqkv.boot.security.SecurityProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @Target(ElementType.TYPE)

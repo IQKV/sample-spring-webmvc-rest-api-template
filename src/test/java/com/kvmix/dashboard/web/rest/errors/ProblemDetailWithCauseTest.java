@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.net.URI;
 
-import org.iqkv.boot.web.rest.errors.ProblemDetailWithCause;
+import com.iqkv.boot.web.rest.errors.ProblemDetailWithCause;
 import org.junit.jupiter.api.Test;
 
 class ProblemDetailWithCauseTest {

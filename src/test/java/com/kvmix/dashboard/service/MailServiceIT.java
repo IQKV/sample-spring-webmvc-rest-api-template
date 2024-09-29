@@ -29,7 +29,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import com.kvmix.dashboard.IntegrationTest;
 import com.kvmix.dashboard.config.Constants;
 import com.kvmix.dashboard.domain.User;
-import org.iqkv.boot.mail.MailProperties;
+import com.iqkv.boot.mail.MailProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

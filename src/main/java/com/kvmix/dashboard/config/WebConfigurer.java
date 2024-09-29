@@ -2,7 +2,7 @@ package com.kvmix.dashboard.config;
 
 import jakarta.servlet.ServletContext;
 
-import org.iqkv.boot.security.SecurityProperties;
+import com.iqkv.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
