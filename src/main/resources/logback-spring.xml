@@ -5,7 +5,7 @@
 
     <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
 
-    <logger name="com.kvmix.dashboard" level="INFO"/>
+    <logger name="com.iqkv.sample.webmvc.dashboard" level="INFO"/>
 
     <logger name="angus.activation" level="WARN"/>
     <logger name="jakarta.activation" level="WARN"/>

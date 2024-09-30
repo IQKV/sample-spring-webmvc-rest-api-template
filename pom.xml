@@ -7,8 +7,8 @@
         <artifactId>boot-parent-pom</artifactId>
         <version>24.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.kvmix</groupId>
-    <artifactId>kvmix-dashboard</artifactId>
+    <groupId>com.iqkv</groupId>
+    <artifactId>sample-webmvc-dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Dashboard Backend</name>
     <description>REST API for implementing dashboard</description>
@@ -31,7 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.run.jvmArguments>-Duser.timezone=UTC</spring-boot.run.jvmArguments>
-        <start-class>com.kvmix.dashboard.DashboardApplication</start-class>
+        <start-class>com.iqkv.sample.webmvc.dashboard.DashboardApplication</start-class>
     </properties>
     <dependencies>
         <dependency>

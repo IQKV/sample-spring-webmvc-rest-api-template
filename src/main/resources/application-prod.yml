@@ -14,7 +14,7 @@
 logging :
   level :
     ROOT : INFO
-    com.kvmix.dashboard : INFO
+    com.iqkv.sample.webmvc.dashboard : INFO
 
 management :
   prometheus :

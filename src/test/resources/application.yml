@@ -12,7 +12,7 @@
 
 spring :
   application :
-    name : kvmix-dashboard
+    name : sample-webmvc-dashboard
   liquibase :
     contexts : test
     change-log : config/db/changelog.xml
