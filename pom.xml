@@ -356,13 +356,11 @@
                     <excludes>
                         <exclude>**/*Application.class</exclude>
                         <exclude>**/config/*.class</exclude>
-                        <exclude>**/Prefixed*.class</exclude>
                         <exclude>**/security/Persistent*.class</exclude>
                         <exclude>**/User*.class</exclude>
                         <exclude>**/MailService.class</exclude>
                         <exclude>**/Undertow*.class</exclude>
                         <exclude>**/domain/Authority.class</exclude>
-                        <exclude>**/ActiveProfilesInfoContributor.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
