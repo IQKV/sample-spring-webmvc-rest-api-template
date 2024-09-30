@@ -7,7 +7,7 @@
         <artifactId>boot-parent-pom</artifactId>
         <version>24.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.iqkv</groupId>
+    <groupId>com.iqkv.sample</groupId>
     <artifactId>sample-webmvc-dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Dashboard Backend</name>
