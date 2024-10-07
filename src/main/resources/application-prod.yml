@@ -30,8 +30,8 @@ spring :
       enabled : false
   datasource :
     type : com.zaxxer.hikari.HikariDataSource
-    url : jdbc:postgresql://localhost:5432/Dashboard
-    username : Dashboard
+    url : jdbc:postgresql://localhost:5432/dashboard
+    username : dashboard
     password :
     hikari :
       poolName : Hikari

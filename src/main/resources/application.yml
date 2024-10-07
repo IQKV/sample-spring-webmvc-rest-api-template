@@ -163,6 +163,7 @@ spring :
       console-available : true
 
 server :
+  shutdown : graceful
   servlet :
     session :
       cookie :
