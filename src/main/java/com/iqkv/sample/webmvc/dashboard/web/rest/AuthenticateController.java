@@ -5,6 +5,7 @@ import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.JWT_ALGORI
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import java.security.Principal;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -69,13 +71,13 @@ public class AuthenticateController {
   /**
    * {@code GET /authenticate} : check if the user is authenticated, and return its login.
    *
-   * @param request the HTTP request.
+   * @param principal the authentication principal.
    * @return the login if the user is authenticated.
    */
-  @GetMapping("/authenticate")
-  public String isAuthenticated(HttpServletRequest request) {
+  @GetMapping(value = "/authenticate", produces = MediaType.TEXT_PLAIN_VALUE)
+  public String isAuthenticated(Principal principal) {
     LOG.debug("REST request to check if the current user is authenticated");
-    return request.getRemoteUser();
+    return principal == null ? null : principal.getName();
   }
 
   public String createToken(Authentication authentication, boolean rememberMe) {
