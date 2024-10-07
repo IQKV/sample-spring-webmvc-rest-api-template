@@ -46,6 +46,11 @@ spring :
   thymeleaf :
     mode : HTML
 
+  modulith :
+    events :
+      jdbc-schema-initialization :
+        enabled : true
+
 server :
   port : 10344
   address : localhost
@@ -74,3 +79,6 @@ management :
   health :
     mail :
       enabled : false
+jdbc :
+  datasource-proxy :
+    enabled : false
