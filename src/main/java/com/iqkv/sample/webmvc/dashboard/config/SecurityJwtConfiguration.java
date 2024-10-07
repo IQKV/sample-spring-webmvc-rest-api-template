@@ -21,7 +21,7 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 @Configuration
 public class SecurityJwtConfiguration {
 
-  private final Logger log = LoggerFactory.getLogger(SecurityJwtConfiguration.class);
+  private static final Logger LOG = LoggerFactory.getLogger(SecurityJwtConfiguration.class);
 
   private final SecurityProperties securityProperties;
 
@@ -47,7 +47,7 @@ public class SecurityJwtConfiguration {
         ) {
           metersService.trackTokenMalformed();
         } else {
-          log.error("Unknown JWT error {}", e.getMessage());
+          LOG.error("Unknown JWT error {}", e.getMessage());
         }
         throw e;
       }

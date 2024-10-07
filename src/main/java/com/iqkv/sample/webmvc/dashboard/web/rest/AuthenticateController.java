@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class AuthenticateController {
 
-  private final Logger log = LoggerFactory.getLogger(AuthenticateController.class);
+  private static final Logger LOG = LoggerFactory.getLogger(AuthenticateController.class);
 
   private final SecurityProperties securityProperties;
   private final JwtEncoder jwtEncoder;
@@ -74,7 +74,7 @@ public class AuthenticateController {
    */
   @GetMapping("/authenticate")
   public String isAuthenticated(HttpServletRequest request) {
-    log.debug("REST request to check if the current user is authenticated");
+    LOG.debug("REST request to check if the current user is authenticated");
     return request.getRemoteUser();
   }
 

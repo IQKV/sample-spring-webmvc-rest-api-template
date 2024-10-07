@@ -29,7 +29,7 @@ public class UndertowSSLConfiguration {
 
   private final UndertowServletWebServerFactory factory;
 
-  private final Logger log = LoggerFactory.getLogger(UndertowSSLConfiguration.class);
+  private static final Logger LOG = LoggerFactory.getLogger(UndertowSSLConfiguration.class);
 
   /**
    * Constructor for UndertowSSLConfiguration.
@@ -43,8 +43,8 @@ public class UndertowSSLConfiguration {
   }
 
   private void configuringUserCipherSuiteOrder() {
-    log.info("Configuring Undertow");
-    log.info("Setting user cipher suite order to true");
+    LOG.info("Configuring Undertow");
+    LOG.info("Setting user cipher suite order to true");
     factory.addBuilderCustomizers(builder -> builder.setSocketOption(UndertowOptions.SSL_USER_CIPHER_SUITES_ORDER, Boolean.TRUE));
   }
 }

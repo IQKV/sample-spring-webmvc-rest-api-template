@@ -40,7 +40,7 @@ public class AccountResource {
     }
   }
 
-  private final Logger log = LoggerFactory.getLogger(AccountResource.class);
+  private static final Logger LOG = LoggerFactory.getLogger(AccountResource.class);
 
   private final UserRepository userRepository;
 
@@ -154,7 +154,7 @@ public class AccountResource {
     } else {
       // Pretend the request has been successful to prevent checking which emails really exist
       // but log that an invalid attempt has been made
-      log.warn("Password reset requested for non existing mail");
+      LOG.warn("Password reset requested for non existing mail");
     }
   }
 

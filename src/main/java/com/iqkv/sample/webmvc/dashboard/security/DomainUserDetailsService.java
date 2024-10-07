@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Component("userDetailsService")
 public class DomainUserDetailsService implements UserDetailsService {
 
-  private final Logger log = LoggerFactory.getLogger(DomainUserDetailsService.class);
+  private static final Logger LOG = LoggerFactory.getLogger(DomainUserDetailsService.class);
 
   private final UserRepository userRepository;
 
@@ -33,7 +33,7 @@ public class DomainUserDetailsService implements UserDetailsService {
   @Override
   @Transactional(readOnly = true)
   public UserDetails loadUserByUsername(final String login) {
-    log.debug("Authenticating {}", login);
+    LOG.debug("Authenticating {}", login);
 
     if (new EmailValidator().isValid(login, null)) {
       return userRepository

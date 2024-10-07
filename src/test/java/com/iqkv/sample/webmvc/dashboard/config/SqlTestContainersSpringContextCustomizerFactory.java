@@ -15,7 +15,7 @@ import org.springframework.test.context.MergedContextConfiguration;
 
 public class SqlTestContainersSpringContextCustomizerFactory implements ContextCustomizerFactory {
 
-  private Logger log = LoggerFactory.getLogger(SqlTestContainersSpringContextCustomizerFactory.class);
+  private static final Logger LOG = LoggerFactory.getLogger(SqlTestContainersSpringContextCustomizerFactory.class);
 
   private static SqlTestContainer prodTestContainer;
 
@@ -28,8 +28,8 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
         TestPropertyValues testValues = TestPropertyValues.empty();
         EmbeddedSQL sqlAnnotation = AnnotatedElementUtils.findMergedAnnotation(testClass, EmbeddedSQL.class);
         if (null != sqlAnnotation) {
-          log.debug("detected the EmbeddedSQL annotation on class {}", testClass.getName());
-          log.info("Warming up the sql database");
+          LOG.debug("detected the EmbeddedSQL annotation on class {}", testClass.getName());
+          LOG.info("Warming up the sql database");
           if (null == prodTestContainer) {
             try {
               Class<? extends SqlTestContainer> containerClass = (Class<? extends SqlTestContainer>) Class.forName(
