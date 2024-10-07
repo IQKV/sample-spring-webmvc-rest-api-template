@@ -1,4 +1,4 @@
-package com.iqkv.boot.security;
+package com.iqkv.sample.webmvc.dashboard.security;
 
 import java.util.List;
 import java.util.Locale;
