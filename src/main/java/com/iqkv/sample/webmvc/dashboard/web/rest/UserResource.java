@@ -1,5 +1,7 @@
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
+import com.iqkv.boot.security.AuthoritiesConstants;
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import java.net.URI;
@@ -19,7 +21,6 @@ import com.iqkv.boot.web.rest.errors.LoginAlreadyUsedException;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import com.iqkv.sample.webmvc.dashboard.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
