@@ -187,7 +187,7 @@ iqkv :
     name : 'dashboardApp'
 
   mail :
-    from : Dashboard@localhost
+    from : dashboard@example.com
   security :
     # By default, CORS is disabled. Uncomment to enable.
     # cors:
