@@ -1,7 +1,7 @@
-package com.iqkv.sample.webmvc.dashboard.security.jwt;
+package com.iqkv.boot.security.jwt;
 
-import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.AUTHORITIES_KEY;
-import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.JWT_ALGORITHM;
+import static com.iqkv.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import java.time.Instant;
 import java.util.Collections;

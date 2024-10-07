@@ -9,14 +9,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.iqkv.boot.security.AuthoritiesConstants;
+import com.iqkv.boot.security.RandomUtil;
+import com.iqkv.boot.security.SecurityUtils;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import com.iqkv.sample.webmvc.dashboard.security.AuthoritiesConstants;
-import com.iqkv.sample.webmvc.dashboard.security.RandomUtil;
-import com.iqkv.sample.webmvc.dashboard.security.SecurityUtils;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
 import org.slf4j.Logger;

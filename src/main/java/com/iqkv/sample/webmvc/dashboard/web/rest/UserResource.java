@@ -1,7 +1,5 @@
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
-
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import java.net.URI;
@@ -12,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.iqkv.boot.build.ClientApplicationProperties;
+import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.boot.web.rest.HeaderUtil;
 import com.iqkv.boot.web.rest.PaginationUtil;
 import com.iqkv.boot.web.rest.ResponseUtil;

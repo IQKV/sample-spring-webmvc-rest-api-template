@@ -1,4 +1,4 @@
-package com.iqkv.sample.webmvc.dashboard.security.jwt;
+package com.iqkv.boot.security.jwt;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

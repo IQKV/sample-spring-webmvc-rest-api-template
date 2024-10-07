@@ -1,4 +1,4 @@
-package com.iqkv.sample.webmvc.dashboard.security;
+package com.iqkv.boot.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

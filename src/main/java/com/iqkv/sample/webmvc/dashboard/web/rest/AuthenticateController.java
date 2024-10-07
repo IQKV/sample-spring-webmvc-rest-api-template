@@ -1,9 +1,8 @@
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
-import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.AUTHORITIES_KEY;
-import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.JWT_ALGORITHM;
+import static com.iqkv.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import java.security.Principal;
 import java.time.Instant;

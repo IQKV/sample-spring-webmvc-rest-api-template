@@ -2,7 +2,7 @@ package com.iqkv.sample.webmvc.dashboard.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import com.iqkv.sample.webmvc.dashboard.security.AuthoritiesConstants;
+import com.iqkv.boot.security.AuthoritiesConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

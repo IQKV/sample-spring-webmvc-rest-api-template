@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
-import com.iqkv.sample.webmvc.dashboard.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
 import org.apache.commons.lang3.RandomStringUtils;

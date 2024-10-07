@@ -15,12 +15,12 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import com.iqkv.sample.webmvc.dashboard.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.PasswordChangeDTO;

@@ -1,6 +1,6 @@
 package com.iqkv.sample.webmvc.dashboard.config;
 
-import static com.iqkv.sample.webmvc.dashboard.security.SecurityUtils.JWT_ALGORITHM;
+import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
