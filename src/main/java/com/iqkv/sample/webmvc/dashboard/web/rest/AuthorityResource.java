@@ -6,10 +6,10 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import com.iqkv.boot.build.ClientApplicationProperties;
-import com.iqkv.boot.web.rest.HeaderUtil;
-import com.iqkv.boot.web.rest.ResponseUtil;
-import com.iqkv.boot.web.rest.errors.BadRequestAlertException;
+import com.iqkv.boot.info.ClientApplicationProperties;
+import com.iqkv.boot.mvc.rest.HeaderUtil;
+import com.iqkv.boot.mvc.rest.ResponseUtil;
+import com.iqkv.boot.mvc.rest.errors.BadRequestAlertException;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import org.slf4j.Logger;

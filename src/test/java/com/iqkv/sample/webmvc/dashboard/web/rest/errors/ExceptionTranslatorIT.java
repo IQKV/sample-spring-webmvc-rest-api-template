@@ -6,7 +6,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.iqkv.boot.web.rest.errors.ErrorConstants;
+import com.iqkv.boot.mvc.rest.errors.ErrorConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

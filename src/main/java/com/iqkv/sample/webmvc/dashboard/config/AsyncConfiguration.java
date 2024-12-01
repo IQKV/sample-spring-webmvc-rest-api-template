@@ -2,7 +2,7 @@ package com.iqkv.sample.webmvc.dashboard.config;
 
 import java.util.concurrent.Executor;
 
-import com.iqkv.boot.web.rest.ExceptionHandlingAsyncTaskExecutor;
+import com.iqkv.boot.mvc.rest.ExceptionHandlingAsyncTaskExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
