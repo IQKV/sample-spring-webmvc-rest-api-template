@@ -2,12 +2,6 @@ package com.iqkv.sample.webmvc.dashboard.web.rest.errors;
 
 import static org.springframework.core.annotation.AnnotatedElementUtils.findMergedAnnotation;
 
-import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.InvalidPasswordException;
-import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
-
 import jakarta.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.Arrays;
@@ -19,8 +13,13 @@ import java.util.Optional;
 import com.iqkv.boot.info.ClientApplicationProperties;
 import com.iqkv.boot.info.Constants;
 import com.iqkv.boot.mvc.rest.HeaderUtil;
+import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
 import com.iqkv.boot.mvc.rest.errors.FieldErrorVM;
 import com.iqkv.boot.mvc.rest.errors.ProblemDetailWithCause;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.InvalidPasswordException;
+import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
