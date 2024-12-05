@@ -4,8 +4,8 @@ import jakarta.validation.Valid;
 import java.util.Optional;
 
 import com.iqkv.boot.security.SecurityUtils;
-import com.iqkv.boot.mvc.rest.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.mvc.rest.errors.InvalidPasswordException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.InvalidPasswordException;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;

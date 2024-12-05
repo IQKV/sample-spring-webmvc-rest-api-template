@@ -48,6 +48,10 @@
         </dependency>
         <dependency>
             <groupId>com.iqkv.boot</groupId>
+            <artifactId>boot-security-errors</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.iqkv.boot</groupId>
             <artifactId>boot-starter-mail</artifactId>
         </dependency>
         <dependency>

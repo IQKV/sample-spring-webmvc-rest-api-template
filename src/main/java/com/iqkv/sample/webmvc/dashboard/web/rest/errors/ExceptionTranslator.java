@@ -2,6 +2,12 @@ package com.iqkv.sample.webmvc.dashboard.web.rest.errors;
 
 import static org.springframework.core.annotation.AnnotatedElementUtils.findMergedAnnotation;
 
+import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.InvalidPasswordException;
+import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
+
 import jakarta.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.Arrays;
@@ -13,12 +19,7 @@ import java.util.Optional;
 import com.iqkv.boot.info.ClientApplicationProperties;
 import com.iqkv.boot.info.Constants;
 import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.errors.BadRequestAlertException;
-import com.iqkv.boot.mvc.rest.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.mvc.rest.errors.ErrorConstants;
 import com.iqkv.boot.mvc.rest.errors.FieldErrorVM;
-import com.iqkv.boot.mvc.rest.errors.InvalidPasswordException;
-import com.iqkv.boot.mvc.rest.errors.LoginAlreadyUsedException;
 import com.iqkv.boot.mvc.rest.errors.ProblemDetailWithCause;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
@@ -204,16 +205,16 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
   private URI getMappedType(Throwable err) {
     if (err instanceof MethodArgumentNotValidException) {
-      return ErrorConstants.CONSTRAINT_VIOLATION_TYPE;
+      return DataErrorConstants.CONSTRAINT_VIOLATION_TYPE;
     }
-    return ErrorConstants.DEFAULT_TYPE;
+    return DataErrorConstants.DEFAULT_TYPE;
   }
 
   private String getMappedMessageKey(Throwable err) {
     if (err instanceof MethodArgumentNotValidException) {
-      return ErrorConstants.ERR_VALIDATION;
+      return DataErrorConstants.ERR_VALIDATION;
     } else if (err instanceof ConcurrencyFailureException || err.getCause() instanceof ConcurrencyFailureException) {
-      return ErrorConstants.ERR_CONCURRENCY_FAILURE;
+      return DataErrorConstants.ERR_CONCURRENCY_FAILURE;
     }
     return null;
   }
