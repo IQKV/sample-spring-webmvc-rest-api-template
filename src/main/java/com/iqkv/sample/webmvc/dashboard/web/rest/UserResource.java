@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Optional;
 
 import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.boot.mvc.rest.HeaderUtil;
 import com.iqkv.boot.mvc.rest.PaginationUtil;
 import com.iqkv.boot.mvc.rest.ResponseUtil;
-import com.iqkv.boot.mvc.rest.errors.BadRequestAlertException;
-import com.iqkv.boot.mvc.rest.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.mvc.rest.errors.LoginAlreadyUsedException;
+import com.iqkv.boot.security.AuthoritiesConstants;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
