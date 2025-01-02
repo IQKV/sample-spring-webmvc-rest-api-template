@@ -4,7 +4,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.boot.security.SecurityProperties;
-import com.iqkv.lms.web.filter.SpaWebFilter;
+import com.iqkv.sample.webmvc.dashboard.web.filter.SpaWebFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
