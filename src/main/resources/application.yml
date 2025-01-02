@@ -189,6 +189,7 @@ iqkv :
   mail :
     from : dashboard@example.com
   security :
+    content-security-policy : "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
     # By default, CORS is disabled. Uncomment to enable.
     # cors:
     #   allowed-origins: "http://localhost:8100,http://localhost:9000"
