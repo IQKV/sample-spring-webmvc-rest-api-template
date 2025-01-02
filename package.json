@@ -1,8 +1,10 @@
 {
   "name": "@iqkv/sample-webmvc-dashboard",
   "version": "24.0.0",
-  "description": "Provide an optional Git commit hooks.",
   "private": true,
+  "description": "Provide an optional Git commit hooks.",
+  "license": "Apache-2.0",
+  "author": "Dima Denisenko",
   "scripts": {
     "lint": "npm run lint:stylelint",
     "lint:stylelint": "stylelint \"**/*.css\" --cache",
@@ -10,13 +12,16 @@
     "prettier:check": "prettier . --check",
     "prettier:write": "prettier . --write"
   },
-  "author": "Dima Denisenko",
-  "license": "Apache-2.0",
   "lint-staged": {
     "**/*.{js}": [
       "npm run lint",
       "prettier . --check --ignore-unknown"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
@@ -33,11 +38,6 @@
     "sort-package-json": "^2.10.1",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^14.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   },
   "engines": {
     "node": ">=22.12.0"
