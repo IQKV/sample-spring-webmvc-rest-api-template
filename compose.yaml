@@ -4,7 +4,7 @@ services:
   postgresql:
     image: postgres:16.6
     container_name: iqkv-postgres
-    restart: unless-stopped
+    restart: no
     # volumes:
     #   - ~/volumes/sample-webmvc-dashboard /postgresql/:/var/lib/postgresql/data/
     environment:
@@ -25,7 +25,7 @@ services:
   mailhog:
     image: mailhog/mailhog
     container_name: iqkv-mailhog
-    restart: unless-stopped
+    restart: no
     ports:
       - "25:1025"
       - "8025:8025"
