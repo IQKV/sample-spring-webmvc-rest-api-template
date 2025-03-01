@@ -79,7 +79,7 @@ server :
 # Add your own application properties here, see the ApplicationProperties class
 # to have type-safe configuration, like in the ApplicationProperties above
 # ===================================================================
-iqkv :
+application-settings :
   cache : # Cache configuration
     ehcache : # Ehcache configuration
       time-to-live-seconds : 3600 # By default, objects stay 1 hour in the cache
