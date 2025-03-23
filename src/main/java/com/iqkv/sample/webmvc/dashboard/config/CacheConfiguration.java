@@ -18,8 +18,8 @@ package com.iqkv.sample.webmvc.dashboard.config;
 
 import java.time.Duration;
 
-import com.iqkv.boot.cache.CacheProperties;
-import com.iqkv.boot.cache.PrefixedKeyGenerator;
+import com.daromir.boot.cache.CacheProperties;
+import com.daromir.boot.cache.PrefixedKeyGenerator;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;

@@ -18,4 +18,4 @@
  * Application security utilities.
  */
 
-package com.iqkv.boot.security;
+package com.daromir.boot.security;

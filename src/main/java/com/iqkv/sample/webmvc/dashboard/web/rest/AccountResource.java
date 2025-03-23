@@ -19,9 +19,9 @@ package com.iqkv.sample.webmvc.dashboard.web.rest;
 import jakarta.validation.Valid;
 import java.util.Optional;
 
-import com.iqkv.boot.security.SecurityUtils;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.InvalidPasswordException;
+import com.daromir.boot.security.SecurityUtils;
+import com.daromir.boot.security.errors.EmailAlreadyUsedException;
+import com.daromir.boot.security.errors.InvalidPasswordException;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;

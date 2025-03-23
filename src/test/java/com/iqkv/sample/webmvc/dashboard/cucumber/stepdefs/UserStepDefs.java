@@ -27,7 +27,7 @@ import io.cucumber.java.en.When;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
+import com.daromir.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.web.rest.UserResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

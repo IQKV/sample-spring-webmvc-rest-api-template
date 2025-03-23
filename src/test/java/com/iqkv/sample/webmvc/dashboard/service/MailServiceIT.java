@@ -42,7 +42,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.mail.javamail.JavaMailSender;
 
-import com.iqkv.boot.mail.MailProperties;
+import com.daromir.boot.mail.MailProperties;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;

@@ -25,9 +25,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.boot.security.RandomUtil;
-import com.iqkv.boot.security.SecurityUtils;
+import com.daromir.boot.security.AuthoritiesConstants;
+import com.daromir.boot.security.RandomUtil;
+import com.daromir.boot.security.SecurityUtils;
 import com.iqkv.sample.webmvc.dashboard.config.Constants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
