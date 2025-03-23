@@ -159,7 +159,6 @@ class HibernateTimeZoneIT {
         // Convert to configured timezone
         .withOffsetSameInstant(ZoneId.of(zoneId).getRules().getOffset(Instant.now()))
         // Normalize to System TimeZone.
-        // TODO this behavior looks a bug, refer to https://github.com/iqkv/generator-iqkv/issues/22579.
         .withOffsetSameLocal(OffsetDateTime.ofInstant(Instant.EPOCH, ZoneId.systemDefault()).getOffset())
         // Convert the normalized value to configured timezone
         .withOffsetSameInstant(ZoneId.of(zoneId).getRules().getOffset(Instant.EPOCH))
