@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import com.daromir.boot.http.ProblemDetailWithCause;
 import com.daromir.boot.info.ClientApplicationProperties;
 import com.daromir.boot.info.Constants;
 import com.daromir.boot.mvc.rest.HeaderUtil;
 import com.daromir.boot.mvc.rest.errors.DataErrorConstants;
 import com.daromir.boot.mvc.rest.errors.FieldErrorVM;
-import com.daromir.boot.mvc.rest.errors.ProblemDetailWithCause;
 import com.daromir.boot.security.errors.BadRequestAlertException;
 import com.daromir.boot.security.errors.EmailAlreadyUsedException;
 import com.daromir.boot.security.errors.InvalidPasswordException;
