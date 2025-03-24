@@ -25,8 +25,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.daromir.boot.security.SecurityProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.LoginVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
