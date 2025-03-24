@@ -195,7 +195,7 @@ application-settings :
     #   allowed-origins: "http://localhost:8100,http://localhost:9000"
     #   allowed-methods: "*"
     #   allowed-headers: "*"
-    #   exposed-headers: "Authorization,Link,X-Total-Count,X-${iqkv.client-application.name}-alert,X-${iqkv.client-application.name}-error,X-${iqkv.client-application.name}-params"
+    #   exposed-headers: "Authorization,Link,X-Total-Count,X-${application-settings.client-application.name}-alert,X-${application-settings.client-application.name}-error,X-${application-settings.client-application.name}-params"
     #   allow-credentials: true
     #   max-age: 1800
 

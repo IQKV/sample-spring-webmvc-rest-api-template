@@ -45,7 +45,7 @@ class TokenAuthenticationSecurityMetersIT {
   @Autowired
   private MockMvc mvc;
 
-  @Value("${iqkv.security.authentication.jwt.base64-secret}")
+  @Value("${application-settings.security.authentication.jwt.base64-secret}")
   private String jwtKey;
 
   @Autowired
