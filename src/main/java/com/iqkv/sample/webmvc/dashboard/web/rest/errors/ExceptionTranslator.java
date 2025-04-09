@@ -28,7 +28,7 @@ import java.util.Optional;
 
 import com.daromir.boot.http.ProblemDetailWithCause;
 import com.daromir.boot.info.ClientApplicationProperties;
-import com.daromir.boot.info.Constants;
+import com.daromir.boot.info.InfoConstants;
 import com.daromir.boot.mvc.rest.HeaderUtil;
 import com.daromir.boot.mvc.rest.errors.DataErrorConstants;
 import com.daromir.boot.mvc.rest.errors.FieldErrorVM;
@@ -243,7 +243,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
   private String getCustomizedErrorDetails(Throwable err) {
     Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
-    if (activeProfiles.contains(Constants.SPRING_PROFILE_PRODUCTION)) {
+    if (activeProfiles.contains(InfoConstants.SPRING_PROFILE_PRODUCTION)) {
       if (err instanceof HttpMessageConversionException) {
         return "Unable to convert http message";
       }
