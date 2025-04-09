@@ -44,7 +44,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 import com.daromir.boot.mail.MailProperties;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
-import com.iqkv.sample.webmvc.dashboard.config.Constants;
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -150,7 +150,7 @@ class MailServiceIT {
   @Test
   void testSendEmailFromTemplate() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
@@ -166,7 +166,7 @@ class MailServiceIT {
   @Test
   void testSendActivationEmail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendActivationEmail(user);
@@ -181,7 +181,7 @@ class MailServiceIT {
   @Test
   void testCreationEmail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendCreationEmail(user);
@@ -196,7 +196,7 @@ class MailServiceIT {
   @Test
   void testSendPasswordResetMail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendPasswordResetMail(user);

@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 import com.daromir.boot.security.AuthoritiesConstants;
 import com.daromir.boot.security.RandomUtil;
 import com.daromir.boot.security.SecurityUtils;
-import com.iqkv.sample.webmvc.dashboard.config.Constants;
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
@@ -176,7 +176,7 @@ public class UserService {
     }
     user.setImageUrl(userDTO.getImageUrl());
     if (userDTO.getLangKey() == null) {
-      user.setLangKey(Constants.DEFAULT_LANGUAGE); // default language
+      user.setLangKey(AppConstants.DEFAULT_LANGUAGE); // default language
     } else {
       user.setLangKey(userDTO.getLangKey());
     }
