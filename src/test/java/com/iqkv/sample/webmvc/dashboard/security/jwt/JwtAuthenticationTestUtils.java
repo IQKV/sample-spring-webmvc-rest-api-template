@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.daromir.boot.security.jwt;
+package expert.takes.boot.security.jwt;
 
-import static com.daromir.boot.security.SecurityUtils.AUTHORITIES_KEY;
-import static com.daromir.boot.security.SecurityUtils.JWT_ALGORITHM;
+import static expert.takes.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static expert.takes.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import java.time.Instant;
 import java.util.Collections;

@@ -18,4 +18,4 @@
  * Application security utilities.
  */
 
-package com.daromir.boot.security;
+package expert.takes.boot.security;

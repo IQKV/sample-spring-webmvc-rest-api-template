@@ -23,7 +23,7 @@ import java.util.Locale;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
-import com.daromir.boot.mail.MailProperties;
+import expert.takes.boot.mail.MailProperties;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

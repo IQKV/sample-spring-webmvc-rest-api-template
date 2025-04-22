@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.daromir.boot.security.jwt;
+package expert.takes.boot.security.jwt;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.daromir.boot.security.SecurityProperties;
+import expert.takes.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.config.ApplicationProperties;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityJwtConfiguration;

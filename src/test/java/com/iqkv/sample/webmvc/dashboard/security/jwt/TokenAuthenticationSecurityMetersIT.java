@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.daromir.boot.security.jwt;
+package expert.takes.boot.security.jwt;
 
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.createInvalidToken;
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
-import static com.daromir.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createInvalidToken;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
+import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 

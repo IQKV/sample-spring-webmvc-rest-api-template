@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.net.URI;
 
-import com.daromir.boot.http.ProblemDetailWithCause;
+import expert.takes.boot.http.ProblemDetailWithCause;
 import org.junit.jupiter.api.Test;
 
 class ProblemDetailWithCauseTest {

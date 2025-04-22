@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.daromir.boot.security;
+package expert.takes.boot.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;

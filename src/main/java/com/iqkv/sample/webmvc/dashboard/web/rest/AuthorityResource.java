@@ -22,10 +22,10 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import com.daromir.boot.info.ClientApplicationProperties;
-import com.daromir.boot.mvc.rest.HeaderUtil;
-import com.daromir.boot.mvc.rest.ResponseUtil;
-import com.daromir.boot.security.errors.BadRequestAlertException;
+import expert.takes.boot.info.ClientApplicationProperties;
+import expert.takes.boot.mvc.rest.HeaderUtil;
+import expert.takes.boot.mvc.rest.ResponseUtil;
+import expert.takes.boot.security.errors.BadRequestAlertException;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import org.slf4j.Logger;
