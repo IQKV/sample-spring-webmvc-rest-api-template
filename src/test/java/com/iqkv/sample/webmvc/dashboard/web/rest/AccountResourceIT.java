@@ -30,7 +30,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import expert.takes.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.AuthoritiesConstants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;

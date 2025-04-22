@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package expert.takes.boot.security.jwt;
+package expert.uses.boot.security.jwt;
 
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createInvalidToken;
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
-import static expert.takes.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createInvalidToken;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 

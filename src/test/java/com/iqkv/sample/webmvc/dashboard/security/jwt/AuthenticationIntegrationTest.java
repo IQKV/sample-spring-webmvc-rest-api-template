@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package expert.takes.boot.security.jwt;
+package expert.uses.boot.security.jwt;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import expert.takes.boot.security.SecurityProperties;
+import expert.uses.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.config.ApplicationProperties;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityJwtConfiguration;

@@ -29,7 +29,7 @@ import java.util.Set;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import expert.takes.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

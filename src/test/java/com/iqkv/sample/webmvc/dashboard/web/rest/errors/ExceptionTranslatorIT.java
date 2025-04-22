@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import expert.takes.boot.mvc.rest.errors.DataErrorConstants;
+import expert.uses.boot.mvc.rest.errors.DataErrorConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

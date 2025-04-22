@@ -22,10 +22,10 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import expert.takes.boot.info.ClientApplicationProperties;
-import expert.takes.boot.mvc.rest.HeaderUtil;
-import expert.takes.boot.mvc.rest.ResponseUtil;
-import expert.takes.boot.security.errors.BadRequestAlertException;
+import expert.uses.boot.info.ClientApplicationProperties;
+import expert.uses.boot.mvc.rest.HeaderUtil;
+import expert.uses.boot.mvc.rest.ResponseUtil;
+import expert.uses.boot.security.errors.BadRequestAlertException;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import org.slf4j.Logger;

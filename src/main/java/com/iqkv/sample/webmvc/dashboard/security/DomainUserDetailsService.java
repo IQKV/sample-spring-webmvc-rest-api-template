@@ -19,7 +19,7 @@ package com.iqkv.sample.webmvc.dashboard.security;
 import java.util.List;
 import java.util.Locale;
 
-import expert.takes.boot.security.UserNotActivatedException;
+import expert.uses.boot.security.UserNotActivatedException;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;

@@ -25,9 +25,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import expert.takes.boot.security.AuthoritiesConstants;
-import expert.takes.boot.security.RandomUtil;
-import expert.takes.boot.security.SecurityUtils;
+import expert.uses.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.RandomUtil;
+import expert.uses.boot.security.SecurityUtils;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;

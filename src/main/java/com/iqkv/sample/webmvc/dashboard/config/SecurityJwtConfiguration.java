@@ -16,12 +16,12 @@
 
 package com.iqkv.sample.webmvc.dashboard.config;
 
-import static expert.takes.boot.security.SecurityUtils.JWT_ALGORITHM;
+import static expert.uses.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import expert.takes.boot.security.SecurityProperties;
+import expert.uses.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import com.nimbusds.jose.util.Base64;

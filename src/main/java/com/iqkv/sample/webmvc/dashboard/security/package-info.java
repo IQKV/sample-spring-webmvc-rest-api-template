@@ -18,4 +18,4 @@
  * Application security utilities.
  */
 
-package expert.takes.boot.security;
+package expert.uses.boot.security;

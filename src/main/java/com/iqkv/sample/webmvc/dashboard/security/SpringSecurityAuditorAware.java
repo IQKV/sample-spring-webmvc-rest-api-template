@@ -18,8 +18,8 @@ package com.iqkv.sample.webmvc.dashboard.security;
 
 import java.util.Optional;
 
-import expert.takes.boot.info.InfoConstants;
-import expert.takes.boot.security.SecurityUtils;
+import expert.uses.boot.info.InfoConstants;
+import expert.uses.boot.security.SecurityUtils;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

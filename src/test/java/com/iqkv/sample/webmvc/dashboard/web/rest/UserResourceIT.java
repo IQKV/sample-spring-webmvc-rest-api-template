@@ -33,7 +33,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import expert.takes.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;

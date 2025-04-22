@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package expert.takes.boot.security.jwt;
+package expert.uses.boot.security.jwt;
 
-import static expert.takes.boot.security.SecurityUtils.AUTHORITIES_KEY;
-import static expert.takes.boot.security.SecurityUtils.JWT_ALGORITHM;
+import static expert.uses.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static expert.uses.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import java.time.Instant;
 import java.util.Collections;
