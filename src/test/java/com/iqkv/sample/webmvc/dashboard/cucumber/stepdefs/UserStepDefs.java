@@ -21,14 +21,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.iqkv.sample.webmvc.dashboard.web.rest.UserResource;
 import expert.uses.boot.security.AuthoritiesConstants;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

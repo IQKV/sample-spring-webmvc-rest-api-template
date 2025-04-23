@@ -40,6 +40,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.springframework.mail.javamail.JavaMailSender;
 
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
@@ -50,9 +51,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mail.MailSendException;
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
 
 /**
  * Integration tests for {@link MailService}.
@@ -72,7 +73,7 @@ class MailServiceIT {
   @Autowired
   private MailProperties mailProperties;
 
-  @MockBean
+  @MockitoBean
   private JavaMailSender javaMailSender;
 
   @Captor
