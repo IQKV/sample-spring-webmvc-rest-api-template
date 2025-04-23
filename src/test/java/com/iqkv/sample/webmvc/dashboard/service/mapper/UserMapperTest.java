@@ -24,11 +24,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import expert.uses.boot.security.AuthoritiesConstants;
+
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
-import expert.uses.boot.security.AuthoritiesConstants;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

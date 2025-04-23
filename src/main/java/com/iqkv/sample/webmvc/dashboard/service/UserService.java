@@ -25,6 +25,10 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import expert.uses.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.RandomUtil;
+import expert.uses.boot.security.SecurityUtils;
+
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
@@ -32,9 +36,6 @@ import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
-import expert.uses.boot.security.AuthoritiesConstants;
-import expert.uses.boot.security.RandomUtil;
-import expert.uses.boot.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.CacheManager;

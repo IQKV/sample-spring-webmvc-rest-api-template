@@ -19,6 +19,10 @@ package com.iqkv.sample.webmvc.dashboard.web.rest;
 import jakarta.validation.Valid;
 import java.util.Optional;
 
+import expert.uses.boot.security.SecurityUtils;
+import expert.uses.boot.security.errors.EmailAlreadyUsedException;
+import expert.uses.boot.security.errors.InvalidPasswordException;
+
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;
@@ -27,9 +31,6 @@ import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.PasswordChangeDTO;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.KeyAndPasswordVM;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.ManagedUserVM;
-import expert.uses.boot.security.SecurityUtils;
-import expert.uses.boot.security.errors.EmailAlreadyUsedException;
-import expert.uses.boot.security.errors.InvalidPasswordException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

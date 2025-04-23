@@ -21,10 +21,11 @@ import static expert.uses.boot.security.SecurityUtils.JWT_ALGORITHM;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import expert.uses.boot.security.SecurityProperties;
+
 import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import com.nimbusds.jose.util.Base64;
-import expert.uses.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

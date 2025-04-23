@@ -36,6 +36,7 @@ import expert.uses.boot.security.errors.BadRequestAlertException;
 import expert.uses.boot.security.errors.EmailAlreadyUsedException;
 import expert.uses.boot.security.errors.InvalidPasswordException;
 import expert.uses.boot.security.errors.LoginAlreadyUsedException;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;

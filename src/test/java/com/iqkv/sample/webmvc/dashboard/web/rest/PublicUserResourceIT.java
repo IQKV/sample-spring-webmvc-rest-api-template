@@ -26,11 +26,12 @@ import jakarta.persistence.EntityManager;
 import java.util.Objects;
 import java.util.Set;
 
+import expert.uses.boot.security.AuthoritiesConstants;
+
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import expert.uses.boot.security.AuthoritiesConstants;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

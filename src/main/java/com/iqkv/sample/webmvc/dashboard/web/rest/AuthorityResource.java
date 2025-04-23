@@ -22,12 +22,13 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import com.iqkv.sample.webmvc.dashboard.domain.Authority;
-import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import expert.uses.boot.info.ClientApplicationProperties;
 import expert.uses.boot.mvc.rest.HeaderUtil;
 import expert.uses.boot.mvc.rest.ResponseUtil;
 import expert.uses.boot.security.errors.BadRequestAlertException;
+
+import com.iqkv.sample.webmvc.dashboard.domain.Authority;
+import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

@@ -35,6 +35,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import expert.uses.boot.security.SecurityProperties;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
