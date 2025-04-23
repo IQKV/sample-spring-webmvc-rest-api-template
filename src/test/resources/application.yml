@@ -60,7 +60,7 @@ server :
 # Add your own application properties here, see the ApplicationProperties class
 # to have type-safe configuration, like in the ApplicationProperties above
 # ===================================================================
-application-settings :
+expertness :
   client-application :
     name : 'dashboardApp'
   mail :

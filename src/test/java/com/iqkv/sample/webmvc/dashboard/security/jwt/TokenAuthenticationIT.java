@@ -38,7 +38,7 @@ class TokenAuthenticationIT {
   @Autowired
   private MockMvc mvc;
 
-  @Value("${application-settings.security.authentication.jwt.base64-secret}")
+  @Value("${expertness.security.authentication.jwt.base64-secret}")
   private String jwtKey;
 
   @Test
