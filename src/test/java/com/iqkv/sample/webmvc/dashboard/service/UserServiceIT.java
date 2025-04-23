@@ -26,10 +26,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import expert.uses.boot.security.RandomUtil;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
+import expert.uses.boot.security.RandomUtil;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

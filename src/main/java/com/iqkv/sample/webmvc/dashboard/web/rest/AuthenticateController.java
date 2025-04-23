@@ -25,9 +25,9 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
-import expert.uses.boot.security.SecurityProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.LoginVM;
+import expert.uses.boot.security.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;

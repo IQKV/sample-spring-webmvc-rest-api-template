@@ -33,13 +33,13 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import expert.uses.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
 import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.mapper.UserMapper;
+import expert.uses.boot.security.AuthoritiesConstants;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

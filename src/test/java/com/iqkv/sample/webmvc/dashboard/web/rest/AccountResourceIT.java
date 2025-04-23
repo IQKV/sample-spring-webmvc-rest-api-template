@@ -30,7 +30,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import expert.uses.boot.security.AuthoritiesConstants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
@@ -42,6 +41,7 @@ import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
 import com.iqkv.sample.webmvc.dashboard.service.dto.PasswordChangeDTO;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.KeyAndPasswordVM;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.ManagedUserVM;
+import expert.uses.boot.security.AuthoritiesConstants;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

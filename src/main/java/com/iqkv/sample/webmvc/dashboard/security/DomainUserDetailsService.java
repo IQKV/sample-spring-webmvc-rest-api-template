@@ -19,10 +19,10 @@ package com.iqkv.sample.webmvc.dashboard.security;
 import java.util.List;
 import java.util.Locale;
 
-import expert.uses.boot.security.UserNotActivatedException;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
+import expert.uses.boot.security.UserNotActivatedException;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

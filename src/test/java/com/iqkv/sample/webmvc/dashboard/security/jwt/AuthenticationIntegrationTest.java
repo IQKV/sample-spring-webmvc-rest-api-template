@@ -21,13 +21,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import expert.uses.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.config.ApplicationProperties;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityJwtConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.WebConfigurer;
 import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
 import com.iqkv.sample.webmvc.dashboard.web.rest.AuthenticateController;
+import expert.uses.boot.security.SecurityProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @Target(ElementType.TYPE)
