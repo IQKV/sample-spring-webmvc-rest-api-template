@@ -20,7 +20,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.iqkv.boot.mvc.rest.PaginationUtil;
+import expert.uses.boot.mvc.rest.PaginationUtil;
+
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
 import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
 import org.slf4j.Logger;

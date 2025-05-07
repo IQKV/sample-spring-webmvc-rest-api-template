@@ -40,19 +40,20 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.springframework.mail.javamail.JavaMailSender;
 
-import com.iqkv.boot.mail.MailProperties;
+import expert.uses.boot.mail.MailProperties;
+
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
-import com.iqkv.sample.webmvc.dashboard.config.Constants;
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mail.MailSendException;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 /**
  * Integration tests for {@link MailService}.
@@ -72,7 +73,7 @@ class MailServiceIT {
   @Autowired
   private MailProperties mailProperties;
 
-  @MockBean
+  @MockitoBean
   private JavaMailSender javaMailSender;
 
   @Captor
@@ -150,7 +151,7 @@ class MailServiceIT {
   @Test
   void testSendEmailFromTemplate() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
@@ -166,7 +167,7 @@ class MailServiceIT {
   @Test
   void testSendActivationEmail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendActivationEmail(user);
@@ -181,7 +182,7 @@ class MailServiceIT {
   @Test
   void testCreationEmail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendCreationEmail(user);
@@ -196,7 +197,7 @@ class MailServiceIT {
   @Test
   void testSendPasswordResetMail() throws Exception {
     User user = new User();
-    user.setLangKey(Constants.DEFAULT_LANGUAGE);
+    user.setLangKey(AppConstants.DEFAULT_LANGUAGE);
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
     mailService.sendPasswordResetMail(user);

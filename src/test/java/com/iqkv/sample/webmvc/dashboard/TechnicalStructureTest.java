@@ -48,7 +48,7 @@ class TechnicalStructureTest {
 
       .ignoreDependency(belongToAnyOf(DashboardApplication.class), alwaysTrue())
       .ignoreDependency(alwaysTrue(), belongToAnyOf(
-          com.iqkv.sample.webmvc.dashboard.config.Constants.class,
+          com.iqkv.sample.webmvc.dashboard.config.AppConstants.class,
           com.iqkv.sample.webmvc.dashboard.config.ApplicationProperties.class
       ));
 }

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.iqkv.boot.security.jwt;
+package expert.uses.boot.security.jwt;
 
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
+import static expert.uses.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -38,7 +38,7 @@ class TokenAuthenticationIT {
   @Autowired
   private MockMvc mvc;
 
-  @Value("${iqkv.security.authentication.jwt.base64-secret}")
+  @Value("${expertness.security.authentication.jwt.base64-secret}")
   private String jwtKey;
 
   @Test

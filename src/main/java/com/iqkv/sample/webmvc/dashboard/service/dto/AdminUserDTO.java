@@ -25,7 +25,7 @@ import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.iqkv.sample.webmvc.dashboard.config.Constants;
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 
@@ -39,7 +39,7 @@ public class AdminUserDTO implements Serializable {
   private Long id;
 
   @NotBlank
-  @Pattern(regexp = Constants.LOGIN_REGEX)
+  @Pattern(regexp = AppConstants.LOGIN_REGEX)
   @Size(min = 1, max = 50)
   private String login;
 

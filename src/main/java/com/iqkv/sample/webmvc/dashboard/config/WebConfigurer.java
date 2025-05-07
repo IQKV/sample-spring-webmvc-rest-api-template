@@ -18,7 +18,8 @@ package com.iqkv.sample.webmvc.dashboard.config;
 
 import jakarta.servlet.ServletContext;
 
-import com.iqkv.boot.security.SecurityProperties;
+import expert.uses.boot.security.SecurityProperties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.ServletContextInitializer;

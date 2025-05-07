@@ -25,15 +25,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.PaginationUtil;
-import com.iqkv.boot.mvc.rest.ResponseUtil;
-import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
-import com.iqkv.sample.webmvc.dashboard.config.Constants;
+import expert.uses.boot.info.ClientApplicationProperties;
+import expert.uses.boot.mvc.rest.HeaderUtil;
+import expert.uses.boot.mvc.rest.PaginationUtil;
+import expert.uses.boot.mvc.rest.ResponseUtil;
+import expert.uses.boot.security.AuthoritiesConstants;
+import expert.uses.boot.security.errors.BadRequestAlertException;
+import expert.uses.boot.security.errors.EmailAlreadyUsedException;
+import expert.uses.boot.security.errors.LoginAlreadyUsedException;
+
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;
@@ -163,7 +164,7 @@ public class UserResource {
   @PutMapping({"/users", "/users/{login}"})
   @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
   public ResponseEntity<AdminUserDTO> updateUser(
-      @PathVariable(name = "login", required = false) @Pattern(regexp = Constants.LOGIN_REGEX) String login,
+      @PathVariable(name = "login", required = false) @Pattern(regexp = AppConstants.LOGIN_REGEX) String login,
       @Valid @RequestBody AdminUserDTO userDTO
   ) {
     LOG.debug("REST request to update User : {}", userDTO);
@@ -214,7 +215,7 @@ public class UserResource {
    */
   @GetMapping("/users/{login}")
   @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
-  public ResponseEntity<AdminUserDTO> getUser(@PathVariable("login") @Pattern(regexp = Constants.LOGIN_REGEX) String login) {
+  public ResponseEntity<AdminUserDTO> getUser(@PathVariable("login") @Pattern(regexp = AppConstants.LOGIN_REGEX) String login) {
     LOG.debug("REST request to get User : {}", login);
     return ResponseUtil.wrapOrNotFound(userService.getUserWithAuthoritiesByLogin(login).map(AdminUserDTO::new));
   }
@@ -227,7 +228,7 @@ public class UserResource {
    */
   @DeleteMapping("/users/{login}")
   @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
-  public ResponseEntity<Void> deleteUser(@PathVariable("login") @Pattern(regexp = Constants.LOGIN_REGEX) String login) {
+  public ResponseEntity<Void> deleteUser(@PathVariable("login") @Pattern(regexp = AppConstants.LOGIN_REGEX) String login) {
     LOG.debug("REST request to delete User: {}", login);
     userService.deleteUser(login);
     return ResponseEntity.noContent().headers(HeaderUtil.createAlert(clientApplicationProperties.getName(), "userManagement.deleted", login)).build();

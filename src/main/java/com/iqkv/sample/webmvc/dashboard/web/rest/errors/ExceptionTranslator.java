@@ -26,16 +26,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.info.Constants;
-import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
-import com.iqkv.boot.mvc.rest.errors.FieldErrorVM;
-import com.iqkv.boot.mvc.rest.errors.ProblemDetailWithCause;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.InvalidPasswordException;
-import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
+import expert.uses.boot.http.ProblemDetailWithCause;
+import expert.uses.boot.info.ClientApplicationProperties;
+import expert.uses.boot.info.InfoConstants;
+import expert.uses.boot.mvc.rest.HeaderUtil;
+import expert.uses.boot.mvc.rest.errors.DataErrorConstants;
+import expert.uses.boot.mvc.rest.errors.FieldErrorVM;
+import expert.uses.boot.security.errors.BadRequestAlertException;
+import expert.uses.boot.security.errors.EmailAlreadyUsedException;
+import expert.uses.boot.security.errors.InvalidPasswordException;
+import expert.uses.boot.security.errors.LoginAlreadyUsedException;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
@@ -243,7 +244,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
   private String getCustomizedErrorDetails(Throwable err) {
     Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
-    if (activeProfiles.contains(Constants.SPRING_PROFILE_PRODUCTION)) {
+    if (activeProfiles.contains(InfoConstants.SPRING_PROFILE_PRODUCTION)) {
       if (err instanceof HttpMessageConversionException) {
         return "Unable to convert http message";
       }
