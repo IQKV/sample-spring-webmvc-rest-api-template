@@ -4,7 +4,7 @@ REST API for implementing dashboard.
 
 ## 🛠️ Technology stack
 
-java 21, Maven, Spring Boot, JPA, Postgresql, Liquibase.
+Java 21, Maven, Spring Boot, JPA, Postgresql, Liquibase.
 
 ## 💻 Database configuration
 
