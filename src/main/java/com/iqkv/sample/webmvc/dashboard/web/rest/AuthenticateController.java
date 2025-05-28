@@ -16,8 +16,8 @@
 
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
-import static expert.uses.boot.security.SecurityUtils.AUTHORITIES_KEY;
-import static expert.uses.boot.security.SecurityUtils.JWT_ALGORITHM;
+import static com.iqkv.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import jakarta.validation.Valid;
 import java.security.Principal;
@@ -25,9 +25,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
-import expert.uses.boot.security.SecurityProperties;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.iqkv.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.LoginVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package expert.uses.boot.security;
+package com.iqkv.boot.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;

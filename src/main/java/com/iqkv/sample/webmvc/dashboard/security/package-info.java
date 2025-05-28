@@ -18,4 +18,4 @@
  * Application security utilities.
  */
 
-package expert.uses.boot.security;
+package com.iqkv.boot.security;

@@ -21,8 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import expert.uses.boot.mvc.rest.JacksonConfiguration;
-
+import com.iqkv.boot.mvc.rest.JacksonConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.AsyncSyncConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.EmbeddedSQL;
 import org.springframework.boot.test.context.SpringBootTest;

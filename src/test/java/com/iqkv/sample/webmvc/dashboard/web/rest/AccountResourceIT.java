@@ -30,9 +30,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import expert.uses.boot.security.AuthoritiesConstants;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.User;

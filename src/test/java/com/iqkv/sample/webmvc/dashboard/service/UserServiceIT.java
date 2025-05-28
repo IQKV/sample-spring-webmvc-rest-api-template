@@ -26,8 +26,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import expert.uses.boot.security.RandomUtil;
-
+import com.iqkv.boot.security.RandomUtil;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;

@@ -24,8 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
-import expert.uses.boot.security.AuthoritiesConstants;
-
+import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.web.rest.UserResource;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
