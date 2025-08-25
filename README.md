@@ -43,9 +43,9 @@ Liquibase runs automatically on startup to apply pending migrations.
 
 You can use any PostgreSQL instance, or start one locally:
 
-1) Use an existing PostgreSQL and configure the connection via env vars or profile `application-*.yml`.
+1. Use an existing PostgreSQL and configure the connection via env vars or profile `application-*.yml`.
 
-2) Start local services with Docker Compose (PostgreSQL, Prometheus, Grafana when defined):
+2. Start local services with Docker Compose (PostgreSQL, Prometheus, Grafana when defined):
 
 ```bash
 docker compose -f compose.yaml up -d
@@ -104,4 +104,3 @@ Security is provided by Spring Security and project starters. Configure users/au
 ## 📜 License
 
 Distributed under the terms of the `LICENSE` file in this repository.
-
