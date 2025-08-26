@@ -47,7 +47,7 @@ You can use any PostgreSQL instance, or start one locally:
 
 2. Start local services with Docker Compose (PostgreSQL, Prometheus, Grafana when defined):
 
-```bash
+```shell script
 docker compose -f compose.yaml up -d
 ```
 
@@ -55,7 +55,7 @@ docker compose -f compose.yaml up -d
 
 Run with the Maven wrapper (preferred):
 
-```bash
+```shell script
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
@@ -69,7 +69,7 @@ The app starts with main class `com.iqkv.sample.webmvc.dashboard.DashboardApplic
 
 ## 📦 Build and run JAR
 
-```bash
+```shell script
 ./mvnw -DskipTests package
 java -jar target/app.jar --spring.profiles.active=prod
 ```
