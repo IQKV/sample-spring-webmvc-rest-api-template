@@ -34,3 +34,4 @@ build/
 .vscode/
 
 CLAUDE.local.md
+.release-it.json
