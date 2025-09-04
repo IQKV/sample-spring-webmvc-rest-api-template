@@ -26,7 +26,7 @@ import jakarta.persistence.EntityManager;
 import java.util.Objects;
 import java.util.Set;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
+import com.github.dimdnk.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;

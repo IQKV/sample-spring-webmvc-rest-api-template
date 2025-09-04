@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.iqkv.boot.security.jwt;
+package com.github.dimdnk.boot.security.jwt;
 
-import static com.iqkv.boot.security.SecurityUtils.AUTHORITIES_KEY;
-import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
+import static com.github.dimdnk.boot.security.SecurityUtils.AUTHORITIES_KEY;
+import static com.github.dimdnk.boot.security.SecurityUtils.JWT_ALGORITHM;
 
 import java.time.Instant;
 import java.util.Collections;

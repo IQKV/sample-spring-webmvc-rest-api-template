@@ -21,7 +21,7 @@ import jakarta.mail.internet.MimeMessage;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
-import com.iqkv.boot.mail.MailProperties;
+import com.github.dimdnk.boot.mail.MailProperties;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -18,8 +18,8 @@ package  com.iqkv.sample.webmvc.dashboard.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.boot.security.SecurityProperties;
+import com.github.dimdnk.boot.security.AuthoritiesConstants;
+import com.github.dimdnk.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.web.filter.SpaWebFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.boot.security;
+package com.github.dimdnk.boot.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
