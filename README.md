@@ -65,7 +65,7 @@ Or on Windows PowerShell:
 ./mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
-The app starts with main class `com.iqkv.sample.webmvc.dashboard.DashboardApplication`.
+The app starts with main class `com.github.dimdnk.sample.webmvc.dashboard.DashboardApplication`.
 
 ## 📦 Build and run JAR
 

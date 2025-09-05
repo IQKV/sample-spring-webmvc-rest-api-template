@@ -15,7 +15,7 @@ logging :
   level :
     ROOT : DEBUG
     org.hibernate.SQL : DEBUG
-    com.iqkv.sample.webmvc.dashboard : DEBUG
+    com.github.dimdnk.sample.webmvc.dashboard : DEBUG
 
 spring :
   devtools :
