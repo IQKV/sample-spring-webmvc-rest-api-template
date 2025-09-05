@@ -25,7 +25,7 @@
             <column name="completion_date" type="timestamp"/>
             <column name="publication_date" type="timestamp"/>
         </createTable>
-        <createTable tableName="iqkv_user">
+        <createTable tableName="knowhow_user">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -56,13 +56,13 @@
             <column name="last_modified_date" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="iqkv_authority">
+        <createTable tableName="knowhow_authority">
             <column name="name" type="varchar(50)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
         </createTable>
 
-        <createTable tableName="iqkv_user_authority">
+        <createTable tableName="knowhow_user_authority">
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
@@ -71,34 +71,34 @@
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="user_id, authority_name" tableName="iqkv_user_authority"/>
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="knowhow_user_authority"/>
 
         <addForeignKeyConstraint baseColumnNames="authority_name"
-                                 baseTableName="iqkv_user_authority"
+                                 baseTableName="knowhow_user_authority"
                                  constraintName="fk_authority_name"
                                  referencedColumnNames="name"
-                                 referencedTableName="iqkv_authority"/>
+                                 referencedTableName="knowhow_authority"/>
 
         <addForeignKeyConstraint baseColumnNames="user_id"
-                                 baseTableName="iqkv_user_authority"
+                                 baseTableName="knowhow_user_authority"
                                  constraintName="fk_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="iqkv_user"/>
+                                 referencedTableName="knowhow_user"/>
 
         <addNotNullConstraint columnName="password_hash"
                               columnDataType="varchar(60)"
-                              tableName="iqkv_user"/>
+                              tableName="knowhow_user"/>
         <loadData
                 file="config/db/00000000000000-initialize-security/authority.csv"
                 separator=";"
-                tableName="iqkv_authority"
+                tableName="knowhow_authority"
                 usePreparedStatements="true">
             <column name="name" type="string"/>
         </loadData>
         <loadData
                 file="config/db/00000000000000-initialize-security/user.csv"
                 separator=";"
-                tableName="iqkv_user"
+                tableName="knowhow_user"
                 usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="activated" type="boolean"/>
@@ -107,17 +107,17 @@
         <loadData
                 file="config/db/00000000000000-initialize-security/user_authority.csv"
                 separator=";"
-                tableName="iqkv_user_authority"
+                tableName="knowhow_user_authority"
                 usePreparedStatements="true">
             <column name="user_id" type="numeric"/>
         </loadData>
-        <dropDefaultValue tableName="iqkv_user" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="knowhow_user" columnName="created_date" columnDataType="${datetimeType}"/>
     </changeSet>
 
     <changeSet author="dev-team" id="00000000000002" context="test">
-        <createTable tableName="iqkv_date_time_wrapper">
+        <createTable tableName="knowhow_date_time_wrapper">
             <column name="id" type="BIGINT">
-                <constraints primaryKey="true" primaryKeyName="iqkv_date_time_wrapperPK"/>
+                <constraints primaryKey="true" primaryKeyName="knowhow_date_time_wrapperPK"/>
             </column>
             <column name="instant" type="timestamp"/>
             <column name="local_date_time" type="timestamp"/>

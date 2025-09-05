@@ -43,6 +43,5 @@
     <logger name="org.hibernate.orm.incubating" level="ERROR"/>
     <logger name="liquibase" level="WARN"/>
     <logger name="LiquibaseSchemaResolver" level="INFO"/>
-    <!-- iqkv-needle-logback-add-log - KnowHowToDev will add a new log with level -->
 
 </configuration>

@@ -34,7 +34,7 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "iqkv_date_time_wrapper")
+@Table(name = "knowhow_date_time_wrapper")
 public class DateTimeWrapper implements Serializable {
 
   private static final long serialVersionUID = 1L;

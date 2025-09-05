@@ -24,7 +24,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  * <p>Properties are configured in the {@code application.yml} file.
  */
-@ConfigurationProperties(prefix = "iqkv", ignoreUnknownFields = true)
+@ConfigurationProperties(prefix = "know-how", ignoreUnknownFields = true)
 @Setter
 public class ApplicationProperties {
 
