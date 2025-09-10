@@ -487,18 +487,17 @@ Document public APIs with Javadoc:
 
 ### Code Formatting
 
-Use Prettier and its Java plugin for consistent formatting:
-```json
-// .prettierrc
-{
-"printWidth": 100,
-"tabWidth": 2,
-"useTabs": false,
-"singleQuote": true,
-"trailingComma": "all",
-"endOfLine": "lf",
-"plugins": ["prettier-plugin-java"]
-}
+Use Prettier and its Java plugin for consistent formatting (.prettierrc):
+```yaml
+endOfLine: lf
+trailingComma: es5
+tabWidth: 2
+semi: true
+singleQuote: false
+plugins:
+- prettier-plugin-packagejson
+- prettier-plugin-java
+
 ```
 ### Static Analysis
 
