@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.github.dimdnk</groupId>
+        <groupId>com.iqkv</groupId>
         <artifactId>boot-parent-pom</artifactId>
-        <version>25.0.0-SNAPSHOT</version>
+        <version>0.25.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.github.dimdnk</groupId>
+    <groupId>com.iqkv</groupId>
     <artifactId>sample-webmvc-dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Dashboard Backend</name>
@@ -22,7 +22,7 @@
         </developer>
     </developers>
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -30,27 +30,27 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.run.jvmArguments>-Duser.timezone=UTC</spring-boot.run.jvmArguments>
-        <start-class>com.github.dimdnk.sample.webmvc.dashboard.DashboardApplication</start-class>
+        <start-class>com.iqkv.sample.webmvc.dashboard.DashboardApplication</start-class>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.github.dimdnk</groupId>
+            <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-cache</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.dimdnk</groupId>
+            <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-mvc-rest</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.dimdnk</groupId>
+            <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.dimdnk</groupId>
+            <groupId>com.iqkv</groupId>
             <artifactId>boot-security-errors</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.dimdnk</groupId>
+            <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-mail</artifactId>
         </dependency>
         <dependency>

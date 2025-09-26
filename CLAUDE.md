@@ -1,10 +1,10 @@
 # CLAUDE - Coding Guidelines and Best Practices
 
-This document outlines the coding guidelines, best practices, and conventions for Java 21+ and Spring Boot 3 development in this project.
+This document outlines the coding guidelines, best practices, and conventions for Java 25+ and Spring Boot 3 development in this project.
 
 ## Table of Contents
 
-- [Java 21+ Features](#java-21-features)
+- [Java 25+ Features](#java-21-features)
 - [Spring Boot 3 Best Practices](#spring-boot-3-best-practices)
 - [Code Organization](#code-organization)
 - [Coding Style](#coding-style)
@@ -15,7 +15,7 @@ This document outlines the coding guidelines, best practices, and conventions fo
 - [Tooling](#tooling)
 - [Contribution Workflow](#contribution-workflow)
 
-## Java 21+ Features
+## Java 25+ Features
 
 ### Virtual Threads
 
@@ -169,7 +169,7 @@ private final Logger log = LoggerFactory.getLogger(UserController.class);
 Organize code by feature rather than layer:
 ```
 
-com.github.dimdnk.sample.webmvc.dashboard
+com.iqkv.sample.webmvc.dashboard
 ├── user                 # User feature
 │   ├── api              # Controllers, DTOs, mappers
 │   ├── domain           # Entities, repositories

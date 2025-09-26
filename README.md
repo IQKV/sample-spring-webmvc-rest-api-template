@@ -13,11 +13,11 @@ Backend service providing a REST API for building dashboard-style applications.
 
 ## 🛠️ Tech stack
 
-Java 21, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
+Java 25, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
 
 ## ✅ Prerequisites
 
-- Java 21 (JDK)
+- Java 25 (JDK)
 - Maven 3.9+ (or use the included `mvnw`/`mvnw.cmd` wrapper)
 - Docker (optional, for local PostgreSQL/observability stack)
 
@@ -65,7 +65,7 @@ Or on Windows PowerShell:
 ./mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
-The app starts with main class `com.github.dimdnk.sample.webmvc.dashboard.DashboardApplication`.
+The app starts with main class `com.iqkv.sample.webmvc.dashboard.DashboardApplication`.
 
 ## 📦 Build and run JAR
 

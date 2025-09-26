@@ -14,7 +14,7 @@
 logging :
   level :
     ROOT : INFO
-    com.github.dimdnk.sample.webmvc.dashboard : INFO
+    com.iqkv.sample.webmvc.dashboard : INFO
 
 management :
   prometheus :
