@@ -15,13 +15,8 @@
  */
 
 /**
- * Security bounded context.
- * Handles authentication, authorization, access control, and security-related operations.
- * This module manages security policies, JWT tokens, and access permissions.
+ * Infrastructure layer of User Management bounded context.
+ * Contains repositories, external service adapters, and persistence implementations.
  */
 
-@org.springframework.modulith.ApplicationModule(
-    displayName = "Security",
-    allowedDependencies = {"shared", "usermanagement"}
-)
-package com.iqkv.sample.webmvc.dashboard.security;
+package com.iqkv.sample.webmvc.dashboard.usermanagement.infrastructure;

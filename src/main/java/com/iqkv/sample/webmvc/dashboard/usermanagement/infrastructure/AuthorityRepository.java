@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-/**
- * Security bounded context.
- * Handles authentication, authorization, access control, and security-related operations.
- * This module manages security policies, JWT tokens, and access permissions.
- */
+package com.iqkv.sample.webmvc.dashboard.usermanagement.infrastructure;
 
-@org.springframework.modulith.ApplicationModule(
-    displayName = "Security",
-    allowedDependencies = {"shared", "usermanagement"}
-)
-package com.iqkv.sample.webmvc.dashboard.security;
+import com.iqkv.sample.webmvc.dashboard.usermanagement.domain.Authority;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+/**
+ * Repository interface for Authority entity.
+ */
+@Repository
+public interface AuthorityRepository extends JpaRepository<Authority, String> {
+}

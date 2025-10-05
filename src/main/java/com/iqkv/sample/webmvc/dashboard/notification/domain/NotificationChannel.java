@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-/**
- * Security bounded context.
- * Handles authentication, authorization, access control, and security-related operations.
- * This module manages security policies, JWT tokens, and access permissions.
- */
+package com.iqkv.sample.webmvc.dashboard.notification.domain;
 
-@org.springframework.modulith.ApplicationModule(
-    displayName = "Security",
-    allowedDependencies = {"shared", "usermanagement"}
-)
-package com.iqkv.sample.webmvc.dashboard.security;
+/**
+ * Enumeration representing different notification delivery channels.
+ */
+public enum NotificationChannel {
+  EMAIL,
+  SMS,
+  PUSH,
+  IN_APP
+}

@@ -15,13 +15,12 @@
  */
 
 /**
- * Security bounded context.
- * Handles authentication, authorization, access control, and security-related operations.
- * This module manages security policies, JWT tokens, and access permissions.
+ * Shared Kernel module containing common utilities, base entities, and cross-cutting concerns.
+ * This module provides foundational components that can be used across all bounded contexts.
  */
 
 @org.springframework.modulith.ApplicationModule(
-    displayName = "Security",
-    allowedDependencies = {"shared", "usermanagement"}
+    displayName = "Shared Kernel",
+    allowedDependencies = {}
 )
-package com.iqkv.sample.webmvc.dashboard.security;
+package com.iqkv.sample.webmvc.dashboard.shared;

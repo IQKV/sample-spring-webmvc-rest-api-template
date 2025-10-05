@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package  com.iqkv.sample.webmvc.dashboard.config;
+package com.iqkv.sample.webmvc.dashboard.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 

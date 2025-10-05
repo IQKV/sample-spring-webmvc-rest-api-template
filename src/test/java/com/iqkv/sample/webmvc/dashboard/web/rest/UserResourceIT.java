@@ -116,7 +116,7 @@ class UserResourceIT {
 
   /**
    * Create a User.
-   *
+   * <p>
    * This is a static method, as tests for other entities might also need it,
    * if they test an entity which has a required relationship to the User entity.
    */

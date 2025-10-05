@@ -14,14 +14,21 @@
  * limitations under the License.
  */
 
-/**
- * Security bounded context.
- * Handles authentication, authorization, access control, and security-related operations.
- * This module manages security policies, JWT tokens, and access permissions.
- */
+package com.iqkv.sample.webmvc.dashboard.usermanagement.domain.event;
 
-@org.springframework.modulith.ApplicationModule(
-    displayName = "Security",
-    allowedDependencies = {"shared", "usermanagement"}
-)
-package com.iqkv.sample.webmvc.dashboard.security;
+import java.time.Instant;
+
+/**
+ * Domain event fired when a user account is activated.
+ */
+public record UserActivatedEvent(
+    Long userId,
+    String login,
+    String email,
+    Instant occurredOn
+) {
+
+  public UserActivatedEvent(Long userId, String login, String email) {
+    this(userId, login, email, Instant.now());
+  }
+}
