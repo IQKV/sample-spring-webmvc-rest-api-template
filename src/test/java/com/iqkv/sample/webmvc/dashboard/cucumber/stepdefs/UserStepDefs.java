@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.sample.webmvc.dashboard.web.rest.UserResource;
+import com.iqkv.sample.webmvc.dashboard.usermanagement.presentation.UserManagementController;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -44,7 +44,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 public class UserStepDefs extends StepDefs {
 
   @Autowired
-  private UserResource userResource;
+  private UserManagementController userResource;
 
   private MockMvc userResourceMock;
 

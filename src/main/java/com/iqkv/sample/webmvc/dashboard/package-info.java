@@ -15,7 +15,20 @@
  */
 
 /**
- * Application root.
+ * Dashboard Application - Modular Monolith with DDD Bounded Contexts.
+ * <p>
+ * This package contains the main application and serves as the root for
+ * Spring Modulith module detection. Each subdirectory represents a
+ * bounded context that is automatically detected as a module.
+ * <p>
+ * Bounded Contexts (Modules):
+ * - usermanagement: User Management bounded context
+ * - security: Security bounded context
+ * - notification: Notification bounded context
+ * - analytics: Analytics bounded context
+ * - shared: Shared kernel for common concerns
+ * - config: Application-wide configuration
  */
 
+@org.springframework.modulith.ApplicationModule
 package com.iqkv.sample.webmvc.dashboard;

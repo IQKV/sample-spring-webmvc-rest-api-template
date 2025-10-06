@@ -1,0 +1,304 @@
+/*
+ * Copyright 2025 IQKV Foundation Team.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.iqkv.sample.webmvc.dashboard.security.application;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.awaitility.Awaitility.await;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.List;
+
+import org.springframework.data.domain.Pageable;
+
+import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
+import com.iqkv.sample.webmvc.dashboard.security.application.SecurityFacade;
+import com.iqkv.sample.webmvc.dashboard.security.domain.SecurityEvent;
+import com.iqkv.sample.webmvc.dashboard.security.domain.SecurityEventType;
+import com.iqkv.sample.webmvc.dashboard.security.infrastructure.SecurityEventRepository;
+import com.iqkv.sample.webmvc.dashboard.usermanagement.domain.event.UserActivatedEvent;
+import com.iqkv.sample.webmvc.dashboard.usermanagement.domain.event.UserRegisteredEvent;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Integration tests for SecurityService within the Security bounded context.
+ * <p>
+ * Tests security event tracking, threat detection, and cross-bounded context
+ * integration for security monitoring.
+ */
+@SpringBootTest
+@IntegrationTest
+class SecurityServiceIT {
+
+  @Autowired
+  private SecurityFacade securityService;
+
+  @Autowired
+  private SecurityEventRepository securityEventRepository;
+
+  @Autowired
+  private ApplicationEventPublisher eventPublisher;
+
+  @AfterEach
+  void tearDown() {
+    securityEventRepository.deleteAll();
+  }
+
+  @Test
+  @Transactional
+  void shouldTrackUserRegistrationSecurityEvent() {
+    // Given
+    UserRegisteredEvent event = new UserRegisteredEvent(
+        1L,
+        "testuser",
+        "test@example.com",
+        "Test",
+        "User"
+    );
+
+    // When
+    eventPublisher.publishEvent(event);
+
+    // Then
+    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> {
+      List<SecurityEvent> events = securityEventRepository.findByUserId(1L);
+      assertThat(events).hasSize(1);
+
+      SecurityEvent securityEvent = events.get(0);
+      assertThat(securityEvent.getEventType()).isEqualTo(SecurityEventType.USER_REGISTERED);
+      assertThat(securityEvent.getUserId()).isEqualTo(1L);
+      assertThat(securityEvent.getDescription()).contains("testuser");
+      assertThat(securityEvent.getMetadata()).containsEntry("login", "testuser");
+      assertThat(securityEvent.getMetadata()).containsEntry("email", "test@example.com");
+    });
+  }
+
+  @Test
+  @Transactional
+  void shouldTrackUserActivationSecurityEvent() {
+    // Given
+    UserActivatedEvent event = new UserActivatedEvent(
+        1L,
+        "testuser",
+        "test@example.com"
+    );
+
+    // When
+    eventPublisher.publishEvent(event);
+
+    // Then
+    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> {
+      List<SecurityEvent> events = securityEventRepository.findByUserId(1L);
+      assertThat(events).hasSize(1);
+
+      SecurityEvent securityEvent = events.get(0);
+      assertThat(securityEvent.getEventType()).isEqualTo(SecurityEventType.USER_ACTIVATED);
+      assertThat(securityEvent.getUserId()).isEqualTo(1L);
+      assertThat(securityEvent.getDescription()).contains("testuser");
+    });
+  }
+
+  @Test
+  @Transactional
+  void shouldRecordLoginAttempt() {
+    // Given
+    String login = "testuser";
+    String ipAddress = "192.168.1.1";
+    String userAgent = "Mozilla/5.0";
+    boolean successful = true;
+
+    // When
+    securityService.recordLoginAttempt(login, ipAddress, userAgent, successful);
+
+    // Then
+    List<SecurityEvent> events = securityEventRepository.findByLogin(login);
+    assertThat(events).hasSize(1);
+
+    SecurityEvent event = events.get(0);
+    assertThat(event.getEventType()).isEqualTo(SecurityEventType.LOGIN_SUCCESS);
+    assertThat(event.getLogin()).isEqualTo(login);
+    assertThat(event.getIpAddress()).isEqualTo(ipAddress);
+    assertThat(event.getUserAgent()).isEqualTo(userAgent);
+    assertThat(event.getDescription()).contains("Successful login");
+  }
+
+  @Test
+  @Transactional
+  void shouldRecordFailedLoginAttempt() {
+    // Given
+    String login = "testuser";
+    String ipAddress = "192.168.1.1";
+    String userAgent = "Mozilla/5.0";
+    boolean successful = false;
+
+    // When
+    securityService.recordLoginAttempt(login, ipAddress, userAgent, successful);
+
+    // Then
+    List<SecurityEvent> events = securityEventRepository.findByLogin(login);
+    assertThat(events).hasSize(1);
+
+    SecurityEvent event = events.get(0);
+    assertThat(event.getEventType()).isEqualTo(SecurityEventType.LOGIN_FAILURE);
+    assertThat(event.getLogin()).isEqualTo(login);
+    assertThat(event.getDescription()).contains("Failed login attempt");
+  }
+
+  @Test
+  @Transactional
+  void shouldDetectSuspiciousActivity() {
+    // Given - Multiple failed login attempts from same IP
+    String login = "testuser";
+    String ipAddress = "192.168.1.1";
+    String userAgent = "Mozilla/5.0";
+
+    // Create multiple failed attempts
+    for (int i = 0; i < 5; i++) {
+      securityService.recordLoginAttempt(login, ipAddress, userAgent, false);
+    }
+
+    // When
+    List<SecurityEvent> suspiciousEvents = securityService.detectSuspiciousActivity();
+
+    // Then
+    assertThat(suspiciousEvents).isNotEmpty();
+    SecurityEvent suspiciousEvent = suspiciousEvents.get(0);
+    assertThat(suspiciousEvent.getEventType()).isEqualTo(SecurityEventType.SUSPICIOUS_ACTIVITY);
+    assertThat(suspiciousEvent.getDescription()).contains("Multiple failed login attempts");
+    assertThat(suspiciousEvent.getIpAddress()).isEqualTo(ipAddress);
+  }
+
+  @Test
+  @Transactional
+  void shouldGetSecurityEventsByDateRange() {
+    // Given
+    LocalDateTime now = LocalDateTime.now();
+    LocalDateTime yesterday = now.minusDays(1);
+    LocalDateTime tomorrow = now.plusDays(1);
+
+    // Create events at different times
+    SecurityEvent event1 = createSecurityEvent(SecurityEventType.LOGIN_SUCCESS, yesterday);
+    SecurityEvent event2 = createSecurityEvent(SecurityEventType.LOGIN_FAILURE, now);
+    SecurityEvent event3 = createSecurityEvent(SecurityEventType.LOGIN_SUCCESS, tomorrow);
+
+    securityEventRepository.saveAll(List.of(event1, event2, event3));
+
+    // When
+    List<SecurityEvent> events = securityService.getSecurityEvents(
+        yesterday.toLocalDate(),
+        now.toLocalDate()
+    );
+
+    // Then
+    assertThat(events).hasSize(2);
+    assertThat(events).extracting(SecurityEvent::getEventType)
+        .containsExactly(SecurityEventType.LOGIN_SUCCESS, SecurityEventType.LOGIN_FAILURE);
+  }
+
+  @Test
+  @Transactional
+  void shouldGetFailedLoginAttemptsByIp() {
+    // Given
+    String ipAddress = "192.168.1.1";
+    LocalDateTime now = LocalDateTime.now();
+
+    SecurityEvent event1 = createSecurityEvent(SecurityEventType.LOGIN_FAILURE, now);
+    event1.setIpAddress(ipAddress);
+
+    SecurityEvent event2 = createSecurityEvent(SecurityEventType.LOGIN_FAILURE, now);
+    event2.setIpAddress(ipAddress);
+
+    SecurityEvent event3 = createSecurityEvent(SecurityEventType.LOGIN_SUCCESS, now);
+    event3.setIpAddress(ipAddress);
+
+    SecurityEvent event4 = createSecurityEvent(SecurityEventType.LOGIN_FAILURE, now);
+    event4.setIpAddress("192.168.1.2");
+
+    securityEventRepository.saveAll(List.of(event1, event2, event3, event4));
+
+    // When
+    List<SecurityEvent> failedAttempts = securityService.getFailedLoginAttemptsByIp(
+        ipAddress,
+        now.minusHours(1),
+        now.plusHours(1)
+    );
+
+    // Then
+    assertThat(failedAttempts).hasSize(2);
+    assertThat(failedAttempts).allMatch(event ->
+        event.getEventType() == SecurityEventType.LOGIN_FAILURE &&
+        event.getIpAddress().equals(ipAddress)
+    );
+  }
+
+  @Test
+  @Transactional
+  void shouldBlockSuspiciousIp() {
+    // Given
+    String ipAddress = "192.168.1.1";
+    String reason = "Multiple failed login attempts";
+
+    // When
+    securityService.blockIpAddress(ipAddress, reason);
+
+    // Then
+    List<SecurityEvent> events = securityEventRepository.findByIpAddress(ipAddress);
+    assertThat(events).hasSize(1);
+
+    SecurityEvent event = events.get(0);
+    assertThat(event.getEventType()).isEqualTo(SecurityEventType.IP_BLOCKED);
+    assertThat(event.getIpAddress()).isEqualTo(ipAddress);
+    assertThat(event.getDescription()).contains(reason);
+  }
+
+  @Test
+  @Transactional
+  void shouldCleanupOldSecurityEvents() {
+    // Given
+    LocalDateTime oldDate = LocalDateTime.now().minusDays(91); // Older than retention period
+    LocalDateTime recentDate = LocalDateTime.now().minusDays(30);
+
+    SecurityEvent oldEvent = createSecurityEvent(SecurityEventType.LOGIN_SUCCESS, oldDate);
+    SecurityEvent recentEvent = createSecurityEvent(SecurityEventType.LOGIN_SUCCESS, recentDate);
+
+    securityEventRepository.saveAll(List.of(oldEvent, recentEvent));
+
+    // When
+    securityService.cleanupOldSecurityEvents();
+
+    // Then
+    assertThat(securityEventRepository.findById(oldEvent.getId())).isEmpty();
+    assertThat(securityEventRepository.findById(recentEvent.getId())).isPresent();
+  }
+
+  private SecurityEvent createSecurityEvent(SecurityEventType eventType, LocalDateTime timestamp) {
+    SecurityEvent event = new SecurityEvent();
+    event.setEventType(eventType);
+    event.setLogin("testuser");
+    event.setIpAddress("192.168.1.1");
+    event.setUserAgent("Mozilla/5.0");
+    event.setDescription("Test security event");
+    event.setOccurredAt(timestamp.atZone(ZoneOffset.UTC).toInstant());
+    return event;
+  }
+}

@@ -1,0 +1,86 @@
+# Configuration for microservices deployment mode
+app :
+  deployment :
+    mode : microservices
+  microservices :
+    enable-circuit-breaker : true
+    enable-retry : true
+    enable-load-balancing : true
+    max-retry-attempts : 3
+    retry-delay : 500ms
+    circuit-breaker-timeout : 10s
+
+# Service discovery configuration
+service :
+  discovery :
+    type : eureka # or consul, kubernetes, etc.
+    eureka :
+      service-url :
+        defaultZone : http://eureka-server:8761/eureka/
+    consul :
+      host : consul-server
+      port : 8500
+
+# Inter-service communication
+services :
+  user-management :
+    url : http://user-management-service:8081
+    timeout : 30s
+    retry-attempts : 3
+  security :
+    url : http://security-service:8082
+    timeout : 30s
+    retry-attempts : 3
+  notification :
+    url : http://notification-service:8083
+    timeout : 30s
+    retry-attempts : 3
+  analytics :
+    url : http://analytics-service:8084
+    timeout : 30s
+    retry-attempts : 3
+
+# Database configuration for microservices
+spring :
+  datasource :
+    # Each service should have its own database
+    url : jdbc:postgresql://postgres-dashboard:5432/dashboard_db
+    username : ${DB_USERNAME:dashboard_user}
+    password : ${DB_PASSWORD:dashboard_pass}
+  
+  # Message broker for event-driven communication
+  rabbitmq :
+    host : ${RABBITMQ_HOST:rabbitmq}
+    port : ${RABBITMQ_PORT:5672}
+    username : ${RABBITMQ_USERNAME:guest}
+    password : ${RABBITMQ_PASSWORD:guest}
+  
+  # Distributed tracing
+  zipkin :
+    base-url : http://zipkin:9411
+  sleuth :
+    sampler :
+      probability : 1.0
+
+# Actuator endpoints for monitoring
+management :
+  endpoints :
+    web :
+      exposure :
+        include : health,info,metrics,prometheus,modulith
+  endpoint :
+    health :
+      show-details : always
+  metrics :
+    export :
+      prometheus :
+        enabled : true
+
+# Logging configuration
+logging :
+  level :
+    com.iqkv.sample.webmvc.dashboard : INFO
+    org.springframework.web.client : DEBUG
+    org.springframework.cloud : DEBUG
+  pattern :
+    console : "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%X{traceId:-},%X{spanId:-}] %logger{36} - %msg%n"

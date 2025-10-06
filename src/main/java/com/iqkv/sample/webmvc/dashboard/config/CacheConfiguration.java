@@ -65,11 +65,11 @@ public class CacheConfiguration {
   @Bean
   public JCacheManagerCustomizer cacheManagerCustomizer() {
     return cm -> {
-      createCache(cm, com.iqkv.sample.webmvc.dashboard.repository.UserRepository.USERS_BY_LOGIN_CACHE);
-      createCache(cm, com.iqkv.sample.webmvc.dashboard.repository.UserRepository.USERS_BY_EMAIL_CACHE);
-      createCache(cm, com.iqkv.sample.webmvc.dashboard.domain.User.class.getName());
-      createCache(cm, com.iqkv.sample.webmvc.dashboard.domain.Authority.class.getName());
-      createCache(cm, com.iqkv.sample.webmvc.dashboard.domain.User.class.getName() + ".authorities");
+      createCache(cm, com.iqkv.sample.webmvc.dashboard.usermanagement.infrastructure.UserRepository.USERS_BY_LOGIN_CACHE);
+      createCache(cm, com.iqkv.sample.webmvc.dashboard.usermanagement.infrastructure.UserRepository.USERS_BY_EMAIL_CACHE);
+      createCache(cm, com.iqkv.sample.webmvc.dashboard.usermanagement.domain.User.class.getName());
+      createCache(cm, com.iqkv.sample.webmvc.dashboard.usermanagement.domain.Authority.class.getName());
+      createCache(cm, com.iqkv.sample.webmvc.dashboard.usermanagement.domain.User.class.getName() + ".authorities");
     };
   }
 

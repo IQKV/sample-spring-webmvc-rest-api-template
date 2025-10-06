@@ -1,0 +1,165 @@
+version: '3.8'
+
+services:
+  # Service Discovery
+  eureka-server:
+    image: steeltoeoss/eureka-server:latest
+    ports:
+      - "8761:8761"
+    environment:
+      - EUREKA_CLIENT_REGISTER_WITH_EUREKA=false
+      - EUREKA_CLIENT_FETCH_REGISTRY=false
+    networks:
+      - microservices-network
+
+  # Message Broker
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - microservices-network
+
+  # Database
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=dashboard_db
+      - POSTGRES_USER=dashboard_user
+      - POSTGRES_PASSWORD=dashboard_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # Distributed Tracing
+  zipkin:
+    image: openzipkin/zipkin:latest
+    ports:
+      - "9411:9411"
+    networks:
+      - microservices-network
+
+  # Monitoring
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - microservices-network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - microservices-network
+
+  # API Gateway (Future)
+  api-gateway:
+    image: dashboard/api-gateway:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_PROFILES_ACTIVE=microservices
+    depends_on:
+      - eureka-server
+    networks:
+      - microservices-network
+
+  # User Management Service
+  user-management-service:
+    image: dashboard/user-management-service:latest
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=microservices
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/user_management_db
+      - SPRING_DATASOURCE_USERNAME=dashboard_user
+      - SPRING_DATASOURCE_PASSWORD=dashboard_pass
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - eureka-server
+      - postgres
+      - rabbitmq
+    networks:
+      - microservices-network
+
+  # Security Service
+  security-service:
+    image: dashboard/security-service:latest
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=microservices
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/security_db
+      - SPRING_DATASOURCE_USERNAME=dashboard_user
+      - SPRING_DATASOURCE_PASSWORD=dashboard_pass
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - eureka-server
+      - postgres
+      - rabbitmq
+    networks:
+      - microservices-network
+
+  # Notification Service
+  notification-service:
+    image: dashboard/notification-service:latest
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=microservices
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/notification_db
+      - SPRING_DATASOURCE_USERNAME=dashboard_user
+      - SPRING_DATASOURCE_PASSWORD=dashboard_pass
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - eureka-server
+      - postgres
+      - rabbitmq
+    networks:
+      - microservices-network
+
+  # Analytics Service
+  analytics-service:
+    image: dashboard/analytics-service:latest
+    ports:
+      - "8084:8084"
+    environment:
+      - SPRING_PROFILES_ACTIVE=microservices
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/analytics_db
+      - SPRING_DATASOURCE_USERNAME=dashboard_user
+      - SPRING_DATASOURCE_PASSWORD=dashboard_pass
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - eureka-server
+      - postgres
+      - rabbitmq
+    networks:
+      - microservices-network
+
+volumes:
+  postgres_data:
+  grafana_data:
+
+networks:
+  microservices-network:
+    driver: bridge

@@ -9,7 +9,6 @@
     </changeSet>
 
 
-
     <!--
         KnowHowToDev core tables.
         The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.

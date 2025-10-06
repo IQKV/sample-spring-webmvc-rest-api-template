@@ -89,7 +89,7 @@ The final artifact name is configured as `app` (see `pom.xml` `<finalName>`).
   - `/actuator/info`
   - `/actuator/metrics`
   - `/actuator/prometheus` (when Prometheus registry is enabled)
-- Optional local stack via Docker Compose includes Prometheus and Grafana with example dashboards under `src/main/docker/grafana`.
+- Optional local stack via Docker Compose includes Prometheus and Grafana with example dashboards under `docker/grafana`.
 
 ## 🔐 Security
 
