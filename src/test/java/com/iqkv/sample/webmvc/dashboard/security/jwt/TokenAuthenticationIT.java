@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.iqkv.boot.security.jwt;
+package com.iqkv.sample.webmvc.dashboard.security.jwt;
 
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.BEARER;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
-import static com.iqkv.boot.security.jwt.JwtAuthenticationTestUtils.createValidToken;
+import static com.iqkv.sample.webmvc.dashboard.security.jwt.JwtAuthenticationTestUtils.BEARER;
+import static com.iqkv.sample.webmvc.dashboard.security.jwt.JwtAuthenticationTestUtils.createExpiredToken;
+import static com.iqkv.sample.webmvc.dashboard.security.jwt.JwtAuthenticationTestUtils.createSignedInvalidJwt;
+import static com.iqkv.sample.webmvc.dashboard.security.jwt.JwtAuthenticationTestUtils.createTokenWithDifferentSignature;
+import static com.iqkv.sample.webmvc.dashboard.security.jwt.JwtAuthenticationTestUtils.createValidToken;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
