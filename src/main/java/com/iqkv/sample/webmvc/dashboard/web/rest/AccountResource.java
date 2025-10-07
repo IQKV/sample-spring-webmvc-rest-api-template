@@ -35,8 +35,9 @@ import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import com.iqkv.sample.webmvc.dashboard.service.dto.PasswordChangeDTO;
+import com.iqkv.sample.webmvc.dashboard.service.mapper.UserMapper;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.PasswordChangeDTO;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.KeyAndPasswordVM;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.StringUtils;
@@ -65,10 +66,13 @@ public class AccountResource {
 
   private final MailService mailService;
 
-  public AccountResource(UserRepository userRepository, UserService userService, MailService mailService) {
+  private final UserMapper userMapper;
+
+  public AccountResource(UserRepository userRepository, UserService userService, MailService mailService, UserMapper userMapper) {
     this.userRepository = userRepository;
     this.userService = userService;
     this.mailService = mailService;
+    this.userMapper = userMapper;
   }
 
   /**
@@ -113,7 +117,7 @@ public class AccountResource {
   public AdminUserDTO getAccount() {
     return userService
         .getUserWithAuthorities()
-        .map(AdminUserDTO::new)
+        .map(userMapper::userToAdminUserDTO)
         .orElseThrow(() -> new AccountResourceException("User could not be found"));
   }
 

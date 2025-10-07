@@ -33,7 +33,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.iqkv.boot.mvc.rest.PaginationUtil;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

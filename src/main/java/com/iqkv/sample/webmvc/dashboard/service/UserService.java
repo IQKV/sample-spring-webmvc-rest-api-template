@@ -41,8 +41,9 @@ import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.UserDTO;
+import com.iqkv.sample.webmvc.dashboard.service.mapper.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,16 +64,20 @@ public class UserService {
 
   private final CacheManager cacheManager;
 
+  private final UserMapper userMapper;
+
   public UserService(
       UserRepository userRepository,
       PasswordEncoder passwordEncoder,
       AuthorityRepository authorityRepository,
-      CacheManager cacheManager
+      CacheManager cacheManager,
+      UserMapper userMapper
   ) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
     this.authorityRepository = authorityRepository;
     this.cacheManager = cacheManager;
+    this.userMapper = userMapper;
   }
 
   public Optional<User> activateRegistration(String key) {
@@ -237,7 +242,7 @@ public class UserService {
           LOG.debug("Changed Information for User: {}", user);
           return user;
         })
-        .map(AdminUserDTO::new);
+        .map(userMapper::userToAdminUserDTO);
   }
 
   /**
@@ -294,12 +299,12 @@ public class UserService {
 
   @Transactional(readOnly = true)
   public Page<AdminUserDTO> getAllManagedUsers(Pageable pageable) {
-    return userRepository.findAll(pageable).map(AdminUserDTO::new);
+    return userRepository.findAll(pageable).map(userMapper::userToAdminUserDTO);
   }
 
   @Transactional(readOnly = true)
   public Page<UserDTO> getAllPublicUsers(Pageable pageable) {
-    return userRepository.findAllByIdNotNullAndActivatedIsTrue(pageable).map(UserDTO::new);
+    return userRepository.findAllByIdNotNullAndActivatedIsTrue(pageable).map(userMapper::userToUserDTO);
   }
 
   @Transactional(readOnly = true)

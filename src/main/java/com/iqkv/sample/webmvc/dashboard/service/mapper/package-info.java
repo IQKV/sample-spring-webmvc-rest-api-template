@@ -15,7 +15,7 @@
  */
 
 /**
- * Data transfer objects mappers.
+ * Mappers for converting between domain entities and DTOs.
  */
-
+@org.springframework.modulith.NamedInterface("api")
 package com.iqkv.sample.webmvc.dashboard.service.mapper;

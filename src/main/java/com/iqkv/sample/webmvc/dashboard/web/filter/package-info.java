@@ -15,6 +15,7 @@
  */
 
 /**
- * Request chain filters.
+ * Web filters.
  */
+@org.springframework.modulith.NamedInterface("api")
 package com.iqkv.sample.webmvc.dashboard.web.filter;

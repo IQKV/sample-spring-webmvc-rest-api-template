@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.iqkv.sample.webmvc.dashboard.service.dto;
+package com.iqkv.sample.webmvc.dashboard.shared.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import com.iqkv.sample.webmvc.dashboard.domain.User;
+
 
 /**
  * A DTO representing a user, with only the public attributes.
@@ -36,11 +36,7 @@ public class UserDTO implements Serializable {
     // Empty constructor needed for Jackson.
   }
 
-  public UserDTO(User user) {
-    this.id = user.getId();
-    // Customize it here if you need, or not, firstName/lastName/etc
-    this.login = user.getLogin();
-  }
+
 
   public Long getId() {
     return id;

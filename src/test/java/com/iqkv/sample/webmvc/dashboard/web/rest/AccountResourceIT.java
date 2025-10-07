@@ -46,8 +46,9 @@ import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import com.iqkv.sample.webmvc.dashboard.service.dto.PasswordChangeDTO;
+import com.iqkv.sample.webmvc.dashboard.service.mapper.UserMapper;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.PasswordChangeDTO;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.KeyAndPasswordVM;
 import com.iqkv.sample.webmvc.dashboard.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -77,6 +78,9 @@ class AccountResourceIT {
 
   @Autowired
   private UserService userService;
+
+  @Autowired
+  private UserMapper userMapper;
 
   @Autowired
   private PasswordEncoder passwordEncoder;
@@ -355,7 +359,7 @@ class AccountResourceIT {
     assertThat(testUser4.orElseThrow().getEmail()).isEqualTo("test-register-duplicate-email@example.com");
 
     testUser4.orElseThrow().setActivated(true);
-    userService.updateUser((new AdminUserDTO(testUser4.orElseThrow())));
+    userService.updateUser(userMapper.userToAdminUserDTO(testUser4.orElseThrow()));
 
     // Register 4th (already activated) user
     restAccountMockMvc

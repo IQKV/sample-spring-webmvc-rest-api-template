@@ -17,5 +17,7 @@
 /**
  * Service layer.
  */
-
+@org.springframework.modulith.ApplicationModule(
+    allowedDependencies = {"shared", "shared::api", "domain", "repository", "security"}
+)
 package com.iqkv.sample.webmvc.dashboard.service;

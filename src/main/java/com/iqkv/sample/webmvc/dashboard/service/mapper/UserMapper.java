@@ -27,8 +27,8 @@ import org.springframework.stereotype.Service;
 
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.UserDTO;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
@@ -47,7 +47,13 @@ public class UserMapper {
   }
 
   public UserDTO userToUserDTO(User user) {
-    return new UserDTO(user);
+    if (user == null) {
+      return null;
+    }
+    UserDTO userDto = new UserDTO();
+    userDto.setId(user.getId());
+    userDto.setLogin(user.getLogin());
+    return userDto;
   }
 
   public List<AdminUserDTO> usersToAdminUserDTOs(List<User> users) {
@@ -55,7 +61,24 @@ public class UserMapper {
   }
 
   public AdminUserDTO userToAdminUserDTO(User user) {
-    return new AdminUserDTO(user);
+    if (user == null) {
+      return null;
+    }
+    AdminUserDTO adminUserDto = new AdminUserDTO();
+    adminUserDto.setId(user.getId());
+    adminUserDto.setLogin(user.getLogin());
+    adminUserDto.setFirstName(user.getFirstName());
+    adminUserDto.setLastName(user.getLastName());
+    adminUserDto.setEmail(user.getEmail());
+    adminUserDto.setActivated(user.isActivated());
+    adminUserDto.setImageUrl(user.getImageUrl());
+    adminUserDto.setLangKey(user.getLangKey());
+    adminUserDto.setCreatedBy(user.getCreatedBy());
+    adminUserDto.setCreatedDate(user.getCreatedDate());
+    adminUserDto.setLastModifiedBy(user.getLastModifiedBy());
+    adminUserDto.setLastModifiedDate(user.getLastModifiedDate());
+    adminUserDto.setAuthorities(user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
+    return adminUserDto;
   }
 
   public List<User> userDTOsToUsers(List<AdminUserDTO> userDTOs) {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.sample.webmvc.dashboard.service.dto;
+package com.iqkv.sample.webmvc.dashboard.shared.dto;
 
 import java.io.Serializable;
 

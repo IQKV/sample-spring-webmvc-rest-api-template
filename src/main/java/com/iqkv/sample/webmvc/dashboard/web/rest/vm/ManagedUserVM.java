@@ -18,7 +18,7 @@ package com.iqkv.sample.webmvc.dashboard.web.rest.vm;
 
 import jakarta.validation.constraints.Size;
 
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
 
 /**
  * View Model extending the AdminUserDTO, which is meant to be used in the user management UI.

@@ -27,8 +27,8 @@ import java.util.Set;
 import com.iqkv.boot.security.AuthoritiesConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
 import com.iqkv.sample.webmvc.dashboard.domain.User;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.UserDTO;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -68,7 +68,7 @@ class UserMapperTest {
     authorities.add(authority);
     user.setAuthorities(authorities);
 
-    userDto = new AdminUserDTO(user);
+    userDto = userMapper.userToAdminUserDTO(user);
   }
 
   @Test

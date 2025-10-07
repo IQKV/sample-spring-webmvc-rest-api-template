@@ -15,9 +15,7 @@
  */
 
 /**
- * Application configuration.
+ * Shared DTOs used across modules.
  */
-@org.springframework.modulith.ApplicationModule(
-    allowedDependencies = {"shared", "service", "repository", "domain", "security", "web", "web::api", "management"}
-)
-package com.iqkv.sample.webmvc.dashboard.config;
+@org.springframework.modulith.NamedInterface("api")
+package com.iqkv.sample.webmvc.dashboard.shared.dto;

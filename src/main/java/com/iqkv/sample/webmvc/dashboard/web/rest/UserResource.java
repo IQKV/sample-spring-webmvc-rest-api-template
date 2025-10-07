@@ -55,7 +55,8 @@ import com.iqkv.sample.webmvc.dashboard.domain.User;
 import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
 import com.iqkv.sample.webmvc.dashboard.service.MailService;
 import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
+import com.iqkv.sample.webmvc.dashboard.service.mapper.UserMapper;
+import com.iqkv.sample.webmvc.dashboard.shared.dto.AdminUserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -112,11 +113,14 @@ public class UserResource {
 
   private final MailService mailService;
 
-  public UserResource(ClientApplicationProperties clientApplicationProperties, UserService userService, UserRepository userRepository, MailService mailService) {
+  private final UserMapper userMapper;
+
+  public UserResource(ClientApplicationProperties clientApplicationProperties, UserService userService, UserRepository userRepository, MailService mailService, UserMapper userMapper) {
     this.clientApplicationProperties = clientApplicationProperties;
     this.userService = userService;
     this.userRepository = userRepository;
     this.mailService = mailService;
+    this.userMapper = userMapper;
   }
 
   /**
@@ -215,7 +219,7 @@ public class UserResource {
   @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
   public ResponseEntity<AdminUserDTO> getUser(@PathVariable("login") @Pattern(regexp = AppConstants.LOGIN_REGEX) String login) {
     LOG.debug("REST request to get User : {}", login);
-    return ResponseUtil.wrapOrNotFound(userService.getUserWithAuthoritiesByLogin(login).map(AdminUserDTO::new));
+    return ResponseUtil.wrapOrNotFound(userService.getUserWithAuthoritiesByLogin(login).map(userMapper::userToAdminUserDTO));
   }
 
   /**
