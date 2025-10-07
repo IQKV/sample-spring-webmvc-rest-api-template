@@ -16,20 +16,12 @@
 
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
-import jakarta.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import jakarta.validation.Valid;
 
-import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.ResponseUtil;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.sample.webmvc.dashboard.domain.Authority;
-import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,6 +32,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.iqkv.boot.info.ClientApplicationProperties;
+import com.iqkv.boot.mvc.rest.HeaderUtil;
+import com.iqkv.boot.mvc.rest.ResponseUtil;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.sample.webmvc.dashboard.domain.Authority;
+import com.iqkv.sample.webmvc.dashboard.repository.AuthorityRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * REST controller for managing {@link com.iqkv.sample.webmvc.dashboard.domain.Authority}.

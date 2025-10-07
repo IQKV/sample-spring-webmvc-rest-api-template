@@ -16,21 +16,22 @@
 
 package com.iqkv.sample.webmvc.dashboard.service;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 
-import com.iqkv.boot.mail.MailProperties;
-import com.iqkv.sample.webmvc.dashboard.domain.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
+import com.iqkv.boot.mail.MailProperties;
+import com.iqkv.sample.webmvc.dashboard.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 

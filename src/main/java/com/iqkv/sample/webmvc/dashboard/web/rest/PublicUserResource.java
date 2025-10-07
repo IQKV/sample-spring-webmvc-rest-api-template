@@ -20,11 +20,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.iqkv.boot.mvc.rest.PaginationUtil;
-import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -35,6 +30,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.iqkv.boot.mvc.rest.PaginationUtil;
+import com.iqkv.sample.webmvc.dashboard.service.UserService;
+import com.iqkv.sample.webmvc.dashboard.service.dto.UserDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api")

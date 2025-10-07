@@ -16,6 +16,12 @@
 
 package com.iqkv.sample.webmvc.dashboard.domain;
 
+import java.io.Serial;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,12 +36,6 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import java.io.Serial;
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
@@ -247,14 +247,14 @@ public class User extends AbstractAuditingEntity<Long> implements Serializable {
   @Override
   public String toString() {
     return "User{" +
-           "login='" + login + '\'' +
-           ", firstName='" + firstName + '\'' +
-           ", lastName='" + lastName + '\'' +
-           ", email='" + email + '\'' +
-           ", imageUrl='" + imageUrl + '\'' +
-           ", activated='" + activated + '\'' +
-           ", langKey='" + langKey + '\'' +
-           ", activationKey='" + activationKey + '\'' +
-           "}";
+        "login='" + login + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", email='" + email + '\'' +
+        ", imageUrl='" + imageUrl + '\'' +
+        ", activated='" + activated + '\'' +
+        ", langKey='" + langKey + '\'' +
+        ", activationKey='" + activationKey + '\'' +
+        "}";
   }
 }

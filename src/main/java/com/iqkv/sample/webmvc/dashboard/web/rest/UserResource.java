@@ -16,31 +16,15 @@
 
 package com.iqkv.sample.webmvc.dashboard.web.rest;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Pattern;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Pattern;
 
-import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.PaginationUtil;
-import com.iqkv.boot.mvc.rest.ResponseUtil;
-import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
-import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
-import com.iqkv.sample.webmvc.dashboard.domain.User;
-import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
-import com.iqkv.sample.webmvc.dashboard.service.MailService;
-import com.iqkv.sample.webmvc.dashboard.service.UserService;
-import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -58,14 +42,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.iqkv.boot.info.ClientApplicationProperties;
+import com.iqkv.boot.mvc.rest.HeaderUtil;
+import com.iqkv.boot.mvc.rest.PaginationUtil;
+import com.iqkv.boot.mvc.rest.ResponseUtil;
+import com.iqkv.boot.security.AuthoritiesConstants;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
+import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
+import com.iqkv.sample.webmvc.dashboard.domain.User;
+import com.iqkv.sample.webmvc.dashboard.repository.UserRepository;
+import com.iqkv.sample.webmvc.dashboard.service.MailService;
+import com.iqkv.sample.webmvc.dashboard.service.UserService;
+import com.iqkv.sample.webmvc.dashboard.service.dto.AdminUserDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * REST controller for managing users.
  *
  * <p>This class accesses the {@link com.iqkv.sample.webmvc.dashboard.domain.User} entity, and needs to fetch its collection of authorities.
  *
  * <p>For a normal use-case, it would be better to have an eager relationship between User and Authority,
- * and send everything to the client side: there would be no View Model and DTO, a lot less code, and an outer-join
- * which would be good for performance.
+ * and send everything to the client side: there would be no View Model and DTO, a lot less code, and an outer-join which would be good for performance.
  *
  * <p>We use a View Model and a DTO for 3 reasons:
  * <ul>
@@ -123,8 +123,7 @@ public class UserResource {
    * {@code POST  /admin/users}  : Creates a new user.
    *
    * <p>Creates a new user if the login and email are not already used, and sends an
-   * mail with an activation link.
-   * The user needs to be activated on creation.
+   * mail with an activation link. The user needs to be activated on creation.
    *
    * @param userDTO the user to create.
    * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new user, or with status {@code 400 (Bad Request)} if the login or email is already in use.

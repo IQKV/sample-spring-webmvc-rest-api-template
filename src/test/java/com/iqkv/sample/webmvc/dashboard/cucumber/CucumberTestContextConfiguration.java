@@ -16,12 +16,14 @@
 
 package com.iqkv.sample.webmvc.dashboard.cucumber;
 
+import org.springframework.test.context.web.WebAppConfiguration;
+
 import com.iqkv.sample.webmvc.dashboard.IntegrationTest;
 import io.cucumber.spring.CucumberContextConfiguration;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 @CucumberContextConfiguration
 @IntegrationTest
 @WebAppConfiguration
 public class CucumberTestContextConfiguration {
+
 }

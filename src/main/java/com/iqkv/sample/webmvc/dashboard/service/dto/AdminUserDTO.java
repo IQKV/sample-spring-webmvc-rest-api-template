@@ -16,14 +16,14 @@
 
 package com.iqkv.sample.webmvc.dashboard.service.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 import com.iqkv.sample.webmvc.dashboard.config.AppConstants;
 import com.iqkv.sample.webmvc.dashboard.domain.Authority;
@@ -199,18 +199,18 @@ public class AdminUserDTO implements Serializable {
   @Override
   public String toString() {
     return "AdminUserDTO{" +
-           "login='" + login + '\'' +
-           ", firstName='" + firstName + '\'' +
-           ", lastName='" + lastName + '\'' +
-           ", email='" + email + '\'' +
-           ", imageUrl='" + imageUrl + '\'' +
-           ", activated=" + activated +
-           ", langKey='" + langKey + '\'' +
-           ", createdBy=" + createdBy +
-           ", createdDate=" + createdDate +
-           ", lastModifiedBy='" + lastModifiedBy + '\'' +
-           ", lastModifiedDate=" + lastModifiedDate +
-           ", authorities=" + authorities +
-           "}";
+        "login='" + login + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", email='" + email + '\'' +
+        ", imageUrl='" + imageUrl + '\'' +
+        ", activated=" + activated +
+        ", langKey='" + langKey + '\'' +
+        ", createdBy=" + createdBy +
+        ", createdDate=" + createdDate +
+        ", lastModifiedBy='" + lastModifiedBy + '\'' +
+        ", lastModifiedDate=" + lastModifiedDate +
+        ", authorities=" + authorities +
+        "}";
   }
 }

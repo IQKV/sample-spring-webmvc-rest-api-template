@@ -21,18 +21,19 @@ import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.iqkv.boot.security.SecurityProperties;
-import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
-import com.nimbusds.jose.jwk.source.ImmutableSecret;
-import com.nimbusds.jose.util.Base64;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
+
+import com.iqkv.boot.security.SecurityProperties;
+import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
+import com.nimbusds.jose.jwk.source.ImmutableSecret;
+import com.nimbusds.jose.util.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Configuration
 public class SecurityJwtConfiguration {
@@ -58,8 +59,8 @@ public class SecurityJwtConfiguration {
           metersService.trackTokenExpired();
         } else if (
             e.getMessage().contains("Invalid JWT serialization")
-            || e.getMessage().contains("Malformed token")
-              || e.getMessage().contains("Invalid unsecured/JWS/JWE")
+                || e.getMessage().contains("Malformed token")
+                || e.getMessage().contains("Invalid unsecured/JWS/JWE")
         ) {
           metersService.trackTokenMalformed();
         } else {

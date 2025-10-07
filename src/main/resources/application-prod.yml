@@ -11,40 +11,40 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-logging :
-  level :
-    ROOT : INFO
-    com.iqkv.sample.webmvc.dashboard : INFO
+logging:
+  level:
+    ROOT: INFO
+    com.iqkv.sample.webmvc.dashboard: INFO
 
-management :
-  prometheus :
-    metrics :
-      export :
-        enabled : false
+management:
+  prometheus:
+    metrics:
+      export:
+        enabled: false
 
-spring :
-  devtools :
-    restart :
-      enabled : false
-    livereload :
-      enabled : false
-  datasource :
-    type : com.zaxxer.hikari.HikariDataSource
-    url : jdbc:postgresql://localhost:5432/dashboard
-    username : dashboard
-    password :
-    hikari :
-      poolName : Hikari
-      auto-commit : false
-  liquibase :
-    contexts : prod
-  mail :
-    host : localhost
-    port : 25
-    username :
-    password :
-  thymeleaf :
-    cache : true
+spring:
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/dashboard
+    username: dashboard
+    password:
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  liquibase:
+    contexts: prod
+  mail:
+    host: localhost
+    port: 25
+    username:
+    password:
+  thymeleaf:
+    cache: true
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
@@ -65,13 +65,13 @@ spring :
 #     # The ciphers suite enforce the security by deactivating some old and deprecated SSL cipher, this list was tested against SSL Labs (https://www.ssllabs.com/ssltest/)
 #     ciphers: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 ,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
 # ===================================================================
-server :
-  port : 8080
-  shutdown : graceful # see https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-graceful-shutdown
-  compression :
-    enabled : true
-    mime-types : text/html,text/xml,text/plain,text/css,application/javascript,application/json,image/svg+xml
-    min-response-size : 1024
+server:
+  port: 8080
+  shutdown: graceful # see https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-graceful-shutdown
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,application/javascript,application/json,image/svg+xml
+    min-response-size: 1024
 
 
 # ===================================================================
@@ -79,19 +79,19 @@ server :
 # Add your own application properties here, see the ApplicationProperties class
 # to have type-safe configuration, like in the ApplicationProperties above
 # ===================================================================
-application-configuration :
-  cache : # Cache configuration
-    ehcache : # Ehcache configuration
-      time-to-live-seconds : 3600 # By default, objects stay 1 hour in the cache
-      max-entries : 1000 # Number of objects in each cache entry
-  security :
-    authentication :
-      jwt :
+application-configuration:
+  cache: # Cache configuration
+    ehcache: # Ehcache configuration
+      time-to-live-seconds: 3600 # By default, objects stay 1 hour in the cache
+      max-entries: 1000 # Number of objects in each cache entry
+  security:
+    authentication:
+      jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
         # As this is the PRODUCTION configuration, you MUST change the default key, and store it securely.
-        base64-secret : MjVkMjY4N2UwMWZhOTZlN2M5ZmEzNTE5YzdkNmJiMDJhNDU0OTU2YTUyYjA2OTE5Zjc5ZDZlNGRkMDI3OWRlNjhjYzgxMTJkZGI1MWI5Y2E0NGFmNDI3MjlkMzNhODU1OGU0YWY1OTkwMGJiOWI4YWE4ZDFlMTA2ODNhM2EyMjI=
+        base64-secret: MjVkMjY4N2UwMWZhOTZlN2M5ZmEzNTE5YzdkNmJiMDJhNDU0OTU2YTUyYjA2OTE5Zjc5ZDZlNGRkMDI3OWRlNjhjYzgxMTJkZGI1MWI5Y2E0NGFmNDI3MjlkMzNhODU1OGU0YWY1OTkwMGJiOWI4YWE4ZDFlMTA2ODNhM2EyMjI=
         # Token is valid 24 hours
-        token-validity-in-seconds : 86400
-        token-validity-in-seconds-for-remember-me : 2592000
-  mail :
-    base-url : http://my-server-url-to-change # Modify according to your server's URL
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
+  mail:
+    base-url: http://my-server-url-to-change # Modify according to your server's URL

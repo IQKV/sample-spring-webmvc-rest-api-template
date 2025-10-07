@@ -19,17 +19,12 @@ package com.iqkv.sample.webmvc.dashboard.web.rest;
 import static com.iqkv.boot.security.SecurityUtils.AUTHORITIES_KEY;
 import static com.iqkv.boot.security.SecurityUtils.JWT_ALGORITHM;
 
-import jakarta.validation.Valid;
 import java.security.Principal;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
+import jakarta.validation.Valid;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.iqkv.boot.security.SecurityProperties;
-import com.iqkv.sample.webmvc.dashboard.web.rest.vm.LoginVM;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -48,6 +43,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.iqkv.boot.security.SecurityProperties;
+import com.iqkv.sample.webmvc.dashboard.web.rest.vm.LoginVM;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Controller to authenticate users.

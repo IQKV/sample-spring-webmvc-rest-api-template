@@ -16,8 +16,9 @@
 
 package com.iqkv.sample.webmvc.dashboard.config;
 
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import lombok.Setter;
 
 /**
  * Properties specific to Dashboard.

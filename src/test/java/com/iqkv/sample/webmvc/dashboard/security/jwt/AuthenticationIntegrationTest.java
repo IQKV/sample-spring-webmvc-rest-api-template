@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.springframework.boot.test.context.SpringBootTest;
+
 import com.iqkv.boot.security.SecurityProperties;
 import com.iqkv.sample.webmvc.dashboard.config.ApplicationProperties;
 import com.iqkv.sample.webmvc.dashboard.config.SecurityConfiguration;
@@ -28,7 +30,6 @@ import com.iqkv.sample.webmvc.dashboard.config.SecurityJwtConfiguration;
 import com.iqkv.sample.webmvc.dashboard.config.WebConfigurer;
 import com.iqkv.sample.webmvc.dashboard.management.SecurityMetersService;
 import com.iqkv.sample.webmvc.dashboard.web.rest.AuthenticateController;
-import org.springframework.boot.test.context.SpringBootTest;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -49,4 +50,5 @@ import org.springframework.boot.test.context.SpringBootTest;
     }
 )
 public @interface AuthenticationIntegrationTest {
+
 }

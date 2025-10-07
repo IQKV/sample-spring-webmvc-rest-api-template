@@ -4,6 +4,7 @@ Backend service providing a REST API for building dashboard-style applications.
 
 ## 🧩 Features
 
+- **Modular Architecture** with Spring Modulith for better code organization and boundaries
 - Authentication and security via Spring Security
 - Relational persistence with JPA/Hibernate
 - Database migrations with Liquibase
@@ -13,7 +14,7 @@ Backend service providing a REST API for building dashboard-style applications.
 
 ## 🛠️ Tech stack
 
-Java 25, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
+Java 25, Maven, Spring Boot, **Spring Modulith**, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
 
 ## ✅ Prerequisites
 
@@ -79,8 +80,38 @@ The final artifact name is configured as `app` (see `pom.xml` `<finalName>`).
 ## 🧪 Tests and coverage
 
 - Unit and integration tests: `./mvnw verify`
+- **Spring Modulith tests** validate module boundaries and architecture compliance
 - Some tests use Testcontainers; Docker must be available for those to run
 - JaCoCo coverage rules are enforced by the build (see `pom.xml`)
+
+### Spring Modulith Architecture
+
+This application uses Spring Modulith to enforce modular boundaries and improve maintainability:
+
+#### Module Structure
+- **`user`** - User management functionality (domain, services, repositories, web controllers)
+- **`shared`** - Common domain objects and utilities shared across modules
+- **`security`** - Security configuration and authentication components
+- **`config`** - Application configuration classes
+
+#### Architecture Tests
+Run modulith compliance tests to validate module boundaries:
+
+```shell script
+./mvnw test -Dtest=ModulithTest
+```
+
+The tests will:
+- Verify that modules only access exposed APIs from other modules
+- Generate PlantUML documentation of the module structure
+- Ensure architectural compliance and prevent unwanted dependencies
+
+#### Module Testing
+Test individual modules in isolation:
+
+```shell script
+./mvnw test -Dtest=UserModuleTest
+```
 
 ## 📈 Observability
 

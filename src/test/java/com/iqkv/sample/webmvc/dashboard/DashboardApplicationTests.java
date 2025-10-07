@@ -16,8 +16,9 @@
 
 package com.iqkv.sample.webmvc.dashboard;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import org.junit.jupiter.api.Test;
 
 @SpringBootTest
 class DashboardApplicationTests {

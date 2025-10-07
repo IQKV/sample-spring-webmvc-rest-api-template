@@ -16,11 +16,11 @@
 
 package com.iqkv.sample.webmvc.dashboard.web.filter;
 
+import java.io.IOException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -35,12 +35,12 @@ public class SpaWebFilter extends OncePerRequestFilter {
     // Request URI includes the contextPath if any, removed it.
     String path = request.getRequestURI().substring(request.getContextPath().length());
     if (
-          !path.startsWith("/api")
-          && !path.startsWith("/management")
-          && !path.startsWith("/v3/api-docs")
-          && !path.startsWith("/h2-console")
-          && !path.contains(".")
-          && path.matches("/(.*)")
+        !path.startsWith("/api")
+            && !path.startsWith("/management")
+            && !path.startsWith("/v3/api-docs")
+            && !path.startsWith("/h2-console")
+            && !path.contains(".")
+            && path.matches("/(.*)")
     ) {
       request.getRequestDispatcher("/index.html").forward(request, response);
       return;

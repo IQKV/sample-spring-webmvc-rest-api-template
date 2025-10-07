@@ -18,25 +18,14 @@ package com.iqkv.sample.webmvc.dashboard.web.rest.errors;
 
 import static org.springframework.core.annotation.AnnotatedElementUtils.findMergedAnnotation;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import jakarta.servlet.http.HttpServletRequest;
 
-import com.iqkv.boot.http.ProblemDetailWithCause;
-import com.iqkv.boot.info.ClientApplicationProperties;
-import com.iqkv.boot.info.InfoConstants;
-import com.iqkv.boot.mvc.rest.HeaderUtil;
-import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
-import com.iqkv.boot.mvc.rest.errors.FieldErrorVM;
-import com.iqkv.boot.security.errors.BadRequestAlertException;
-import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
-import com.iqkv.boot.security.errors.InvalidPasswordException;
-import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.dao.DataAccessException;
@@ -58,9 +47,21 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.iqkv.boot.http.ProblemDetailWithCause;
+import com.iqkv.boot.info.ClientApplicationProperties;
+import com.iqkv.boot.info.InfoConstants;
+import com.iqkv.boot.mvc.rest.HeaderUtil;
+import com.iqkv.boot.mvc.rest.errors.DataErrorConstants;
+import com.iqkv.boot.mvc.rest.errors.FieldErrorVM;
+import com.iqkv.boot.security.errors.BadRequestAlertException;
+import com.iqkv.boot.security.errors.EmailAlreadyUsedException;
+import com.iqkv.boot.security.errors.InvalidPasswordException;
+import com.iqkv.boot.security.errors.LoginAlreadyUsedException;
+import org.apache.commons.lang3.StringUtils;
+
 /**
- * Controller advice to translate the server side exceptions to client-friendly json structures.
- * The error response follows RFC7807 - Problem Details for HTTP APIs (https://tools.ietf.org/html/rfc7807).
+ * Controller advice to translate the server side exceptions to client-friendly json structures. The error response follows RFC7807 - Problem Details for HTTP APIs
+ * (https://tools.ietf.org/html/rfc7807).
  */
 @ControllerAdvice
 public class ExceptionTranslator extends ResponseEntityExceptionHandler {

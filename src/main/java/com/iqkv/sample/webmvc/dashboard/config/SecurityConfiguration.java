@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-package  com.iqkv.sample.webmvc.dashboard.config;
+package com.iqkv.sample.webmvc.dashboard.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import com.iqkv.boot.security.AuthoritiesConstants;
-import com.iqkv.boot.security.SecurityProperties;
-import com.iqkv.sample.webmvc.dashboard.web.filter.SpaWebFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -37,6 +34,10 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
 import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
+
+import com.iqkv.boot.security.AuthoritiesConstants;
+import com.iqkv.boot.security.SecurityProperties;
+import com.iqkv.sample.webmvc.dashboard.web.filter.SpaWebFilter;
 
 @Configuration
 @EnableMethodSecurity(securedEnabled = true)

@@ -18,10 +18,11 @@ package com.iqkv.sample.webmvc.dashboard.security;
 
 import java.util.Optional;
 
-import com.iqkv.boot.info.InfoConstants;
-import com.iqkv.boot.security.SecurityUtils;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+
+import com.iqkv.boot.info.InfoConstants;
+import com.iqkv.boot.security.SecurityUtils;
 
 /**
  * Implementation of {@link AuditorAware} based on Spring Security.
