@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Service class for managing users.
  */
-@Service
+@Service("userModuleService")
 @Transactional
 public class UserService {
 

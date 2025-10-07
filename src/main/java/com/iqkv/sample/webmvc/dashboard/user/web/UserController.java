@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.iqkv.sample.webmvc.dashboard.user.domain.User;
 import com.iqkv.sample.webmvc.dashboard.user.service.UserService;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -45,7 +46,7 @@ public class UserController {
 
   private final UserService userService;
 
-  public UserController(UserService userService) {
+  public UserController(@Qualifier("userModuleService") UserService userService) {
     this.userService = userService;
   }
 
