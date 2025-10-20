@@ -13,11 +13,11 @@ Backend service providing a REST API for building dashboard-style applications.
 
 ## 🛠️ Tech stack
 
-Java 25, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
+Java 21, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquibase, PostgreSQL, Micrometer (Prometheus), MapStruct, Testcontainers (tests).
 
 ## ✅ Prerequisites
 
-- Java 25 (JDK)
+- Java 21 (JDK)
 - Maven 3.9+ (or use the included `mvnw`/`mvnw.cmd` wrapper)
 - Docker (optional, for local PostgreSQL/observability stack)
 
