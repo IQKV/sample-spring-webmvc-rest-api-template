@@ -43,7 +43,7 @@
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
-            <artifactId>boot-starter-security</artifactId>
+            <artifactId>boot-starter-security-oauth2-jose</artifactId>
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
