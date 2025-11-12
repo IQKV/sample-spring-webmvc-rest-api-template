@@ -43,7 +43,7 @@ public class DomainUserDetailsService implements UserDetailsService {
 
   private final UserRepository userRepository;
 
-  public DomainUserDetailsService(UserRepository userRepository) {
+  public DomainUserDetailsService(final UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 

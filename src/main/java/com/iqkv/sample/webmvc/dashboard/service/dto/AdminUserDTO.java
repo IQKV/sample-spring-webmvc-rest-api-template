@@ -75,7 +75,7 @@ public class AdminUserDTO implements Serializable {
     // Empty constructor needed for Jackson.
   }
 
-  public AdminUserDTO(User user) {
+  public AdminUserDTO(final User user) {
     this.id = user.getId();
     this.login = user.getLogin();
     this.firstName = user.getFirstName();

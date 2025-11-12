@@ -34,7 +34,7 @@ public class SecurityMetersService {
   private final Counter tokenUnsupportedCounter;
   private final Counter tokenMalformedCounter;
 
-  public SecurityMetersService(MeterRegistry registry) {
+  public SecurityMetersService(final MeterRegistry registry) {
     this.tokenInvalidSignatureCounter = invalidTokensCounterForCauseBuilder("invalid-signature").register(registry);
     this.tokenExpiredCounter = invalidTokensCounterForCauseBuilder("expired").register(registry);
     this.tokenUnsupportedCounter = invalidTokensCounterForCauseBuilder("unsupported").register(registry);

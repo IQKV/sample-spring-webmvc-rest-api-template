@@ -66,7 +66,7 @@ public final class TestUtil {
 
     private final ZonedDateTime date;
 
-    public ZonedDateTimeMatcher(ZonedDateTime date) {
+    public ZonedDateTimeMatcher(final ZonedDateTime date) {
       this.date = date;
     }
 
@@ -106,7 +106,7 @@ public final class TestUtil {
 
     final BigDecimal value;
 
-    public NumberMatcher(BigDecimal value) {
+    public NumberMatcher(final BigDecimal value) {
       this.value = value;
     }
 

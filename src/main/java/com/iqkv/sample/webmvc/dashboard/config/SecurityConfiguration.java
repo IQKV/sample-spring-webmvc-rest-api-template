@@ -44,7 +44,7 @@ public class SecurityConfiguration {
 
   private final SecurityProperties securityProperties;
 
-  public SecurityConfiguration(SecurityProperties securityProperties) {
+  public SecurityConfiguration(final SecurityProperties securityProperties) {
     this.securityProperties = securityProperties;
   }
 

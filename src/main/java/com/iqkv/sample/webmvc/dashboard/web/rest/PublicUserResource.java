@@ -48,7 +48,7 @@ public class PublicUserResource {
 
   private final UserService userService;
 
-  public PublicUserResource(UserService userService) {
+  public PublicUserResource(final UserService userService) {
     this.userService = userService;
   }
 

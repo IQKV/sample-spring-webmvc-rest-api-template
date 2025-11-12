@@ -42,7 +42,7 @@ public class AsyncConfiguration implements AsyncConfigurer {
 
   private final TaskExecutionProperties taskExecutionProperties;
 
-  public AsyncConfiguration(TaskExecutionProperties taskExecutionProperties) {
+  public AsyncConfiguration(final TaskExecutionProperties taskExecutionProperties) {
     this.taskExecutionProperties = taskExecutionProperties;
   }
 

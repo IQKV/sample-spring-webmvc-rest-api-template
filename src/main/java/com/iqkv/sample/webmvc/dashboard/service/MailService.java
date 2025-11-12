@@ -57,10 +57,10 @@ public class MailService {
   private final SpringTemplateEngine templateEngine;
 
   public MailService(
-      MailProperties mailProperties,
-      JavaMailSender javaMailSender,
-      MessageSource messageSource,
-      SpringTemplateEngine templateEngine
+      final MailProperties mailProperties,
+      final JavaMailSender javaMailSender,
+      final MessageSource messageSource,
+      final SpringTemplateEngine templateEngine
   ) {
     this.mailProperties = mailProperties;
     this.javaMailSender = javaMailSender;

@@ -62,7 +62,7 @@ public class AuthenticateController {
   private final JwtEncoder jwtEncoder;
   private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
-  public AuthenticateController(SecurityProperties securityProperties, JwtEncoder jwtEncoder, AuthenticationManagerBuilder authenticationManagerBuilder) {
+  public AuthenticateController(final SecurityProperties securityProperties, final JwtEncoder jwtEncoder, final AuthenticationManagerBuilder authenticationManagerBuilder) {
     this.securityProperties = securityProperties;
     this.jwtEncoder = jwtEncoder;
     this.authenticationManagerBuilder = authenticationManagerBuilder;
@@ -125,7 +125,7 @@ public class AuthenticateController {
 
     private String idToken;
 
-    JWTToken(String idToken) {
+    JWTToken(final String idToken) {
       this.idToken = idToken;
     }
 

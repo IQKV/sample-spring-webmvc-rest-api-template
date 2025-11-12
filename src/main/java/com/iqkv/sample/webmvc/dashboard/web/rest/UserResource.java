@@ -112,7 +112,7 @@ public class UserResource {
 
   private final MailService mailService;
 
-  public UserResource(ClientApplicationProperties clientApplicationProperties, UserService userService, UserRepository userRepository, MailService mailService) {
+  public UserResource(final ClientApplicationProperties clientApplicationProperties, final UserService userService, final UserRepository userRepository, final MailService mailService) {
     this.clientApplicationProperties = clientApplicationProperties;
     this.userService = userService;
     this.userRepository = userRepository;

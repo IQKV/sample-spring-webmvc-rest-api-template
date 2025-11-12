@@ -56,7 +56,7 @@ public class AuthorityResource {
   private final ClientApplicationProperties clientApplicationProperties;
   private final AuthorityRepository authorityRepository;
 
-  public AuthorityResource(ClientApplicationProperties clientApplicationProperties, AuthorityRepository authorityRepository) {
+  public AuthorityResource(final ClientApplicationProperties clientApplicationProperties, final AuthorityRepository authorityRepository) {
     this.clientApplicationProperties = clientApplicationProperties;
     this.authorityRepository = authorityRepository;
   }

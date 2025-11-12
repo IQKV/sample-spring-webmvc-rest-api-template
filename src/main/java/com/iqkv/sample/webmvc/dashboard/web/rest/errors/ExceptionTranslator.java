@@ -73,7 +73,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
   private final ClientApplicationProperties clientApplicationProperties;
   private final Environment env;
 
-  public ExceptionTranslator(ClientApplicationProperties clientApplicationProperties, Environment env) {
+  public ExceptionTranslator(final ClientApplicationProperties clientApplicationProperties, final Environment env) {
     this.clientApplicationProperties = clientApplicationProperties;
     this.env = env;
   }

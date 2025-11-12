@@ -51,7 +51,7 @@ public class AccountResource {
 
   private static class AccountResourceException extends RuntimeException {
 
-    private AccountResourceException(String message) {
+    private AccountResourceException(final String message) {
       super(message);
     }
   }
@@ -64,7 +64,7 @@ public class AccountResource {
 
   private final MailService mailService;
 
-  public AccountResource(UserRepository userRepository, UserService userService, MailService mailService) {
+  public AccountResource(final UserRepository userRepository, final UserService userService, final MailService mailService) {
     this.userRepository = userRepository;
     this.userService = userService;
     this.mailService = mailService;

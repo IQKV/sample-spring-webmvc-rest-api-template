@@ -43,7 +43,7 @@ public class CacheConfiguration {
   private BuildProperties buildProperties;
   private final javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration;
 
-  public CacheConfiguration(CacheProperties cacheProperties) {
+  public CacheConfiguration(final CacheProperties cacheProperties) {
     CacheProperties.Ehcache ehcache = cacheProperties.getEhcache();
 
     jcacheConfiguration = Eh107Configuration.fromEhcacheCacheConfiguration(

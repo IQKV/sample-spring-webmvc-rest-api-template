@@ -63,10 +63,10 @@ public class UserService {
   private final CacheManager cacheManager;
 
   public UserService(
-      UserRepository userRepository,
-      PasswordEncoder passwordEncoder,
-      AuthorityRepository authorityRepository,
-      CacheManager cacheManager
+      final UserRepository userRepository,
+      final PasswordEncoder passwordEncoder,
+      final AuthorityRepository authorityRepository,
+      final CacheManager cacheManager
   ) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;

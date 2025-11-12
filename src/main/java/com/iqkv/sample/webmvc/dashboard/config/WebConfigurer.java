@@ -42,7 +42,7 @@ public class WebConfigurer implements ServletContextInitializer {
 
   private final SecurityProperties securityProperties;
 
-  public WebConfigurer(Environment env, SecurityProperties securityProperties) {
+  public WebConfigurer(final Environment env, final SecurityProperties securityProperties) {
     this.env = env;
     this.securityProperties = securityProperties;
   }

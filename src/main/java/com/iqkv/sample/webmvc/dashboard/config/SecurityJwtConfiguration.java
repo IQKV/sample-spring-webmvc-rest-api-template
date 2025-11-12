@@ -41,7 +41,7 @@ public class SecurityJwtConfiguration {
 
   private final SecurityProperties securityProperties;
 
-  public SecurityJwtConfiguration(SecurityProperties securityProperties) {
+  public SecurityJwtConfiguration(final SecurityProperties securityProperties) {
     this.securityProperties = securityProperties;
   }
 
