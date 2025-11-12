@@ -51,7 +51,7 @@ public class SecurityJwtConfiguration {
     return token -> {
       try {
         return jwtDecoder.decode(token);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         if (e.getMessage().contains("Invalid signature")) {
           metersService.trackTokenInvalidSignature();
         } else if (e.getMessage().contains("Jwt expired at")) {

@@ -78,7 +78,7 @@ public final class TestUtil {
           return false;
         }
         return true;
-      } catch (DateTimeParseException e) {
+      } catch (final DateTimeParseException e) {
         mismatchDescription.appendText("was ").appendValue(item).appendText(", which could not be parsed as a ZonedDateTime");
         return false;
       }
