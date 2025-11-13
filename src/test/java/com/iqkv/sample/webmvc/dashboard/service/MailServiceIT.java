@@ -223,7 +223,7 @@ class MailServiceIT {
     User user = new User();
     user.setLogin("john");
     user.setEmail("john.doe@example.com");
-    for (String langKey : languages) {
+    for (final String langKey : languages) {
       user.setLangKey(langKey);
       mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
       verify(javaMailSender, atLeastOnce()).send(messageCaptor.capture());

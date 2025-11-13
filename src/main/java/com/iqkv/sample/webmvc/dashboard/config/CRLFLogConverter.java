@@ -71,7 +71,7 @@ public class CRLFLogConverter extends CompositeConverter<ILoggingEvent> {
   }
 
   protected boolean isLoggerSafe(ILoggingEvent event) {
-    for (String safeLogger : SAFE_LOGS) {
+    for (final String safeLogger : SAFE_LOGS) {
       if (event.getLoggerName().startsWith(safeLogger)) {
         return true;
       }
