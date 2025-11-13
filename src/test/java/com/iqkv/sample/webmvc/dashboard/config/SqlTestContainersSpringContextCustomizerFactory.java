@@ -53,7 +53,7 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
               );
               prodTestContainer = beanFactory.createBean(containerClass);
               beanFactory.registerSingleton(containerClass.getName(), prodTestContainer);
-            } catch (ClassNotFoundException e) {
+            } catch (final ClassNotFoundException e) {
               throw new RuntimeException(e);
             }
           }
