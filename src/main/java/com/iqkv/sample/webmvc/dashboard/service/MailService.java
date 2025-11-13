@@ -93,7 +93,7 @@ public class MailService {
       message.setText(content, isHtml);
       javaMailSender.send(mimeMessage);
       LOG.debug("Sent email to User '{}'", to);
-    } catch (MailException | MessagingException e) {
+    } catch (final MailException | MessagingException e) {
       LOG.warn("Email could not be sent to user '{}'", to, e);
     }
   }
