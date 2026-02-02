@@ -27,7 +27,7 @@ Application properties live under `src/main/resources` and are organized by prof
 
 - `application.yml` — common defaults
 - `application-dev.yml` — local development
-- `application-prod.yml` — production
+- `application-production.yml` — production
 - `application-tls.yml` — optional TLS setup
 
 Common environment variables (override as needed):
