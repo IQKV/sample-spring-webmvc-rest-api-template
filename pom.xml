@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.iqkv</groupId>
         <artifactId>boot-parent-pom</artifactId>
-        <version>0.25.0-SNAPSHOT</version>
+        <version>0.24.0</version>
     </parent>
     <groupId>com.iqkv</groupId>
     <artifactId>sample-webmvc-dashboard</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.24.0-SNAPSHOT</version>
     <name>Dashboard Backend</name>
     <description>REST API for implementing dashboard</description>
     <developers>
@@ -36,22 +36,27 @@
         <dependency>
             <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-cache</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-mvc-rest</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-security-oauth2-jose</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
             <artifactId>boot-security-errors</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.iqkv</groupId>
             <artifactId>boot-starter-mail</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>net.ttddyy.observation</groupId>
