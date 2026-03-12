@@ -487,18 +487,8 @@ Document public APIs with Javadoc:
 
 ### Code Formatting
 
-Use Prettier and its Java plugin for consistent formatting (.prettierrc):
-```yaml
-endOfLine: lf
-trailingComma: es5
-tabWidth: 2
-semi: true
-singleQuote: false
-plugins:
-- prettier-plugin-packagejson
-- prettier-plugin-java
+Use oxftm for consistent formatting.
 
-```
 ### Static Analysis
 
 Use tools like SonarQube, SpotBugs, or PMD to find potential issues:
