@@ -17,7 +17,7 @@ Java 21, Maven, Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Liquiba
 
 ## ✅ Prerequisites
 
-- Java 21 (JDK)
+- Java 25 (JDK)
 - Maven 3.9+ (or use the included `mvnw`/`mvnw.cmd` wrapper)
 - Docker (optional, for local PostgreSQL/observability stack)
 
