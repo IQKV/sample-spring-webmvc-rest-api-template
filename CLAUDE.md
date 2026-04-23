@@ -1,11 +1,11 @@
 # CLAUDE - Coding Guidelines and Best Practices
 
-This document outlines the coding guidelines, best practices, and conventions for Java 21+ and Spring Boot 3 development in this project.
+This document outlines the coding guidelines, best practices, and conventions for Java 25+ and Spring Boot 4 development in this project.
 
 ## Table of Contents
 
-- [Java 21+ Features](#java-21-features)
-- [Spring Boot 3 Best Practices](#spring-boot-3-best-practices)
+- [Java 25+ Features](#java-21-features)
+- [Spring Boot 4 Best Practices](#spring-boot-3-best-practices)
 - [Code Organization](#code-organization)
 - [Coding Style](#coding-style)
 - [Testing Strategies](#testing-strategies)
@@ -15,7 +15,7 @@ This document outlines the coding guidelines, best practices, and conventions fo
 - [Tooling](#tooling)
 - [Contribution Workflow](#contribution-workflow)
 
-## Java 21+ Features
+## Java 25+ Features
 
 ### Virtual Threads
 
@@ -80,11 +80,11 @@ case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> "Weekday";
 case SATURDAY, SUNDAY -> "Weekend";
 };
 ```
-## Spring Boot 3 Best Practices
+## Spring Boot 4 Best Practices
 
 ### Use Jakarta EE APIs
 
-Spring Boot 3 uses Jakarta EE, not the legacy `javax` packages:
+Spring Boot 4 uses Jakarta EE, not the legacy `javax` packages:
 ```java
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
